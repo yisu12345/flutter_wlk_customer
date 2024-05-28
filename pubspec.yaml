@@ -16,7 +16,7 @@ dependencies:
   get: ^4.6.5
   flutter_screenutil: ^5.9.0
   flustars_flutter3: ^3.0.0 #工具类 SpUtil，ScreenUtil, DirectoryUtil等等。
-  intl: ^0.19.0
+  intl: ^0.18.1
 
 
 dev_dependencies:
