@@ -17,6 +17,8 @@ dependencies:
   flutter_screenutil: ^5.9.0
   flustars_flutter3: ^3.0.0 #工具类 SpUtil，ScreenUtil, DirectoryUtil等等。
   intl: ^0.18.1
+  flutter_widget_from_html_core: ^0.14.9 #html
+  transparent_image: ^2.0.1 #图片懒加载
 
 
 dev_dependencies:
