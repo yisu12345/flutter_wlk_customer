@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_wlk_customer/utils/customer.dart';
 
@@ -61,7 +60,7 @@ class CustomerTitleAndContentWidget extends StatelessWidget {
               TextSpan(
                 text: unitTitle,
                 style: CustomerTextStyle(
-                  customerFontSize: unitTitleFontSize ?? 30,
+                  customerFontSize: unitTitleFontSize,
                   customerColor: unitContentColor ?? const Color(0xff399FFF),
                   customerFontWeight: unitTitleFontWeight ?? FontWeight.normal,
                 ),
@@ -69,12 +68,11 @@ class CustomerTitleAndContentWidget extends StatelessWidget {
               TextSpan(
                 text: title,
                 style: CustomerTextStyle(
-                  customerFontSize: titleFontSize ?? 28,
+                  customerFontSize: titleFontSize,
                   customerColor: titleColor ?? const Color(0xff1A1A1A),
                   customerFontWeight: titleFontWeight ?? FontWeight.normal,
                 ),
               ),
-
             ],
           ),
         ),
@@ -84,18 +82,18 @@ class CustomerTitleAndContentWidget extends StatelessWidget {
             children: [
               TextSpan(
                 text: content,
-                style: CustomerTextStyle(
-                  customerFontSize: contentFontSize ?? 30,
-                  customerColor: contentColor ?? const Color(0xff399FFF),
-                  customerFontWeight: contentFontWeight ?? FontWeight.normal,
+                style: TextStyle(
+                  fontSize: contentFontSize,
+                  color: contentColor ?? const Color(0xff399FFF),
+                  fontWeight: contentFontWeight ?? FontWeight.normal,
                 ),
               ),
               TextSpan(
                 text: unitContent,
-                style: CustomerTextStyle(
-                  customerFontSize: unitContentFontSize ?? 30,
-                  customerColor: unitContentColor ?? const Color(0xff399FFF),
-                  customerFontWeight: unitContentFontWeight ?? FontWeight.normal,
+                style: TextStyle(
+                  fontSize: unitContentFontSize,
+                  color: unitContentColor ?? const Color(0xff399FFF),
+                  fontWeight: unitContentFontWeight ?? FontWeight.normal,
                 ),
               ),
             ],

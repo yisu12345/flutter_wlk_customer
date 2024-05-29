@@ -189,8 +189,8 @@ class CustomerRankListWidget extends StatelessWidget {
               children: [
                 Text(
                   '${detailTitle}TOP10',
-                  style: const TextStyle(
-                    fontSize: 30,
+                  style: TextStyle(
+                    fontSize: titleFontSize,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
