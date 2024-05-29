@@ -2,6 +2,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_wlk_customer/utils/customer.dart';
 
+///上下结构的文字
+///title、unit上
+///content、unit下
 class CustomerTitleAndContentWidget extends StatelessWidget {
   final String title;
   final FontWeight? titleFontWeight;
