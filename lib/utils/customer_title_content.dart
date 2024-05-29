@@ -57,18 +57,18 @@ class CustomerTitleAndContentWidget extends StatelessWidget {
             children: [
               TextSpan(
                 text: unitTitle,
-                style: customerTextStyle(
-                  fontSize: unitTitleFontSize ?? 30,
-                  color: unitContentColor ?? const Color(0xff399FFF),
-                  fontWeight: unitTitleFontWeight ?? FontWeight.normal,
+                style: CustomerTextStyle(
+                  customerFontSize: unitTitleFontSize ?? 30,
+                  customerColor: unitContentColor ?? const Color(0xff399FFF),
+                  customerFontWeight: unitTitleFontWeight ?? FontWeight.normal,
                 ),
               ),
               TextSpan(
                 text: title,
-                style: customerTextStyle(
-                  fontSize: titleFontSize ?? 28,
-                  color: titleColor ?? const Color(0xff1A1A1A),
-                  fontWeight: titleFontWeight ?? FontWeight.normal,
+                style: CustomerTextStyle(
+                  customerFontSize: titleFontSize ?? 28,
+                  customerColor: titleColor ?? const Color(0xff1A1A1A),
+                  customerFontWeight: titleFontWeight ?? FontWeight.normal,
                 ),
               ),
 
@@ -81,18 +81,18 @@ class CustomerTitleAndContentWidget extends StatelessWidget {
             children: [
               TextSpan(
                 text: content,
-                style: customerTextStyle(
-                  fontSize: contentFontSize ?? 30,
-                  color: contentColor ?? const Color(0xff399FFF),
-                  fontWeight: contentFontWeight ?? FontWeight.normal,
+                style: CustomerTextStyle(
+                  customerFontSize: contentFontSize ?? 30,
+                  customerColor: contentColor ?? const Color(0xff399FFF),
+                  customerFontWeight: contentFontWeight ?? FontWeight.normal,
                 ),
               ),
               TextSpan(
                 text: unitContent,
-                style: customerTextStyle(
-                  fontSize: unitContentFontSize ?? 30,
-                  color: unitContentColor ?? const Color(0xff399FFF),
-                  fontWeight: unitContentFontWeight ?? FontWeight.normal,
+                style: CustomerTextStyle(
+                  customerFontSize: unitContentFontSize ?? 30,
+                  customerColor: unitContentColor ?? const Color(0xff399FFF),
+                  customerFontWeight: unitContentFontWeight ?? FontWeight.normal,
                 ),
               ),
             ],
