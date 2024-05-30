@@ -10,7 +10,7 @@ class ShowDialogWidget extends StatelessWidget {
 
   const ShowDialogWidget({
     super.key,
-    required this.ctx,
+    this.ctx,
     required this.child,
     required this.padding,
   });
