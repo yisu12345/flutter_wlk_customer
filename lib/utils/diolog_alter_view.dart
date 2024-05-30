@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 ///ctx  showDialog context
 ///padding 位置
 class ShowDialogWidget extends StatelessWidget {
-  final BuildContext ctx;
+  final BuildContext? ctx;
   final Widget child;
   final EdgeInsetsGeometry padding;
 
@@ -22,7 +22,7 @@ class ShowDialogWidget extends StatelessWidget {
       body: Stack(
         children: [
           GestureDetector(
-            onTap: () => Navigator.pop(ctx),
+            onTap: ctx == null ? null : () => Navigator.pop(ctx!),
             child: Container(
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height,
