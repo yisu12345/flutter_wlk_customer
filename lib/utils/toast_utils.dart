@@ -150,3 +150,4 @@ class ToastUtils {
     EasyLoading.dismiss();
   }
 }
+
