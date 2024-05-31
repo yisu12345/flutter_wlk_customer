@@ -194,7 +194,7 @@ class CustomerRankListWidget extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                spaceHeight10Widget(height: 30),
+               SizedBox(height: 30.h,),
                 ListView.separated(
                   shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),
@@ -220,7 +220,7 @@ class CustomerRankListWidget extends StatelessWidget {
                     );
                   },
                   separatorBuilder: (_, index) {
-                    return spaceHeight10Widget(height: 20);
+                    return SizedBox(height: 20.h);
                   },
                   itemCount: detail?.length ?? 0,
                 ),

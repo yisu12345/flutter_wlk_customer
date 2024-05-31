@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_wlk_customer/utils/customer.dart';
 
 ///上下结构的文字
@@ -76,7 +77,7 @@ class CustomerTitleAndContentWidget extends StatelessWidget {
             ],
           ),
         ),
-        spaceHeight10Widget(height: spaceHeight),
+        SizedBox(height: spaceHeight?.h ?? 30.h),
         RichText(
           text: TextSpan(
             children: [

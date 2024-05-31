@@ -202,17 +202,3 @@ class CustomerHtmlWidget extends StatelessWidget {
     );
   }
 }
-
-///空白高度
-Widget spaceHeight10Widget({double? height}) {
-  return SizedBox(
-    height: height?.h ?? 10.h,
-  );
-}
-
-///空白宽度
-Widget spaceWidth10Widget({double? width}) {
-  return SizedBox(
-    width: width?.w ?? 10.w,
-  );
-}
