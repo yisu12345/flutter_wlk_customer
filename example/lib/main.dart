@@ -1,3 +1,4 @@
+import 'package:example/common/http/http_unit.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -66,6 +67,17 @@ class _MyHomePageState extends State<MyHomePage> {
       // called again, and so nothing would appear to happen.
       _counter++;
     });
+  }
+
+  getRequest() async{
+    // static const String cityHomeBusiness = '/home/listBusiness';
+    await HttpUtil.request('/home/listBusiness');
+  }
+
+  @override
+  void initState() {
+    getRequest();
+    super.initState();
   }
 
   @override

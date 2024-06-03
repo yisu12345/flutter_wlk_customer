@@ -67,6 +67,7 @@ class HttpUtils {
     Map<String, dynamic>? queryParameters,
     bool isShowLoading = false,
     CancelToken? cancelToken,
+    VoidCallback? unLoginAction,
   }) async {
     ///开始网络请求
     late NetResult netResult;
@@ -129,7 +130,6 @@ class HttpUtils {
     String lengthHeader = Headers.contentLengthHeader,
     data,
     Options? options,
-
   }) async {
     ///开始网络请求
     late NetResult netResult;
@@ -171,7 +171,7 @@ class HttpUtils {
   }
 
   ///接口校验
-  static void _apiVerify(Response response,{VoidCallback? unLoginAction}) {
+  static void _apiVerify(Response response, {VoidCallback? unLoginAction}) {
     if (response.data != null && response.data != '') {
       ///判断返回值是否是Map
       if (response.data is Map) {
