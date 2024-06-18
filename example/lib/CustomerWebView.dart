@@ -2,6 +2,8 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:flutter_wlk_customer/utils/toast_utils.dart';
 
 // import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:webview_flutter/webview_flutter.dart';
@@ -36,8 +38,17 @@ class _CustomerWebViewState extends State<CustomerWebView> {
           onProgress: (int progress) {
             // Update loading bar.
           },
-          onPageStarted: (String url) {},
-          onPageFinished: (String url) {},
+          onPageStarted: (String url) async{
+            // ToastUtils.showLoading();
+            await EasyLoading.show(
+              // status: 'loading...',
+              maskType: EasyLoadingMaskType.black,
+            );
+
+          },
+          onPageFinished: (String url) async{
+            await EasyLoading.dismiss();
+          },
           onHttpError: (HttpResponseError error) {},
           onWebResourceError: (WebResourceError error) {},
           onNavigationRequest: (NavigationRequest request) {

@@ -135,7 +135,7 @@
     },
     {
       "name": "flutter_screenutil",
-      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/flutter_screenutil-5.9.1",
+      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/flutter_screenutil-5.9.3",
       "packageUri": "lib/",
       "languageVersion": "2.17"
     },
@@ -285,9 +285,9 @@
     },
     {
       "name": "platform",
-      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/platform-3.1.4",
+      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/platform-3.1.5",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.2"
     },
     {
       "name": "plugin_platform_interface",
@@ -303,7 +303,7 @@
     },
     {
       "name": "rational",
-      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/rational-2.2.2",
+      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/rational-2.2.3",
       "packageUri": "lib/",
       "languageVersion": "2.14"
     },
@@ -495,7 +495,7 @@
     },
     {
       "name": "video_player",
-      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/video_player-2.8.6",
+      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/video_player-2.8.7",
       "packageUri": "lib/",
       "languageVersion": "3.2"
     },
@@ -596,7 +596,7 @@
       "languageVersion": "3.2"
     }
   ],
-  "generated": "2024-06-18T07:23:24.440407Z",
+  "generated": "2024-06-18T07:31:14.470214Z",
   "generator": "pub",
   "generatorVersion": "3.2.6"
 }
