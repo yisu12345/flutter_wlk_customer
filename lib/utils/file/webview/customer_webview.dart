@@ -2,7 +2,8 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_inappwebview/flutter_inappwebview.dart';
+import 'package:webview_flutter/webview_flutter.dart';
+
 
 class CustomerWebView extends StatefulWidget {
   final String url;
@@ -14,41 +15,34 @@ class CustomerWebView extends StatefulWidget {
 }
 
 class _CustomerWebViewState extends State<CustomerWebView> {
-  InAppWebViewController? webViewController;
-  InAppWebViewGroupOptions options = InAppWebViewGroupOptions(
-      crossPlatform: InAppWebViewOptions(
-        useShouldOverrideUrlLoading: true,
-        mediaPlaybackRequiresUserGesture: false,
-      ),
-      android: AndroidInAppWebViewOptions(
-        useHybridComposition: true,
-      ),
-      ios: IOSInAppWebViewOptions(
-        allowsInlineMediaPlayback: true,
-      ));
-  late PullToRefreshController pullToRefreshController;
-
+  late final WebViewController _controller;
   @override
   void initState() {
-    intiWebViewData();
+
     super.initState();
+    _controller = WebViewController()
+      ..setJavaScriptMode(JavaScriptMode.unrestricted)
+      ..setBackgroundColor(const Color(0x00000000))
+      ..setNavigationDelegate(
+        NavigationDelegate(
+          onProgress: (int progress) {
+            // Update loading bar.
+          },
+          onPageStarted: (String url) {},
+          onPageFinished: (String url) {},
+          onHttpError: (HttpResponseError error) {},
+          onWebResourceError: (WebResourceError error) {},
+          onNavigationRequest: (NavigationRequest request) {
+            if (request.url.startsWith('https://www.youtube.com/')) {
+              return NavigationDecision.prevent;
+            }
+            return NavigationDecision.navigate;
+          },
+        ),
+      )
+      ..loadRequest(Uri.parse(widget.url));
   }
 
-  intiWebViewData() async {
-    pullToRefreshController = PullToRefreshController(
-      options: PullToRefreshOptions(
-        color: Colors.blue,
-      ),
-      onRefresh: () async {
-        if (Platform.isAndroid) {
-          webViewController?.reload();
-        } else if (Platform.isIOS) {
-          webViewController?.loadUrl(
-              urlRequest: URLRequest(url: await webViewController?.getUrl()));
-        }
-      },
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -58,70 +52,7 @@ class _CustomerWebViewState extends State<CustomerWebView> {
         child: Stack(
       alignment: Alignment.topLeft,
       children: [
-        InAppWebView(
-          initialUrlRequest: URLRequest(url: WebUri(widget.url)),
-          initialOptions: options,
-          pullToRefreshController: pullToRefreshController,
-          onWebViewCreated: (controller) {
-            webViewController = controller;
-          },
-          // onLoadStart: (controller, url) {
-          //   setState(() {
-          //     this.url = url.toString();
-          //     urlController.text = this.url;
-          //   });
-          // },
-          // androidOnPermissionRequest: (controller, origin, resources) async {
-          //   return PermissionRequestResponse(
-          //       resources: resources,
-          //       action: PermissionRequestResponseAction.GRANT);
-          // },
-          // shouldOverrideUrlLoading: (controller, navigationAction) async {
-          //   var uri = navigationAction.request.url!;
-          //
-          //   if (![ "http", "https", "file", "chrome",
-          //     "data", "javascript", "about"].contains(uri.scheme)) {
-          //     if (await canLaunch(url)) {
-          //       // Launch the App
-          //       await launch(
-          //         url,
-          //       );
-          //       // and cancel the request
-          //       return NavigationActionPolicy.CANCEL;
-          //     }
-          //   }
-          //
-          //   return NavigationActionPolicy.ALLOW;
-          // },
-          // onLoadStop: (controller, url) async {
-          //   pullToRefreshController.endRefreshing();
-          //   setState(() {
-          //     this.url = url.toString();
-          //     urlController.text = this.url;
-          //   });
-          // },
-          onLoadError: (controller, url, code, message) {
-            pullToRefreshController.endRefreshing();
-          },
-          // onProgressChanged: (controller, progress) {
-          //   if (progress == 100) {
-          //     pullToRefreshController.endRefreshing();
-          //   }
-          //   setState(() {
-          //     this.progress = progress / 100;
-          //     urlController.text = this.url;
-          //   });
-          // },
-          // onUpdateVisitedHistory: (controller, url, androidIsReload) {
-          //   setState(() {
-          //     this.url = url.toString();
-          //     urlController.text = this.url;
-          //   });
-          // },
-          onConsoleMessage: (controller, consoleMessage) {
-            print(consoleMessage);
-          },
-        ),
+        WebViewWidget(controller: _controller),
         GestureDetector(
           onTap: () => Navigator.pop(context),
           child: Container(

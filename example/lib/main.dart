@@ -1,5 +1,7 @@
+import 'package:example/CustomerWebView.dart';
 import 'package:example/common/http/http_unit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_wlk_customer/utils/file/customer_file.dart';
 
 void main() {
   runApp(const MyApp());
@@ -69,7 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  getRequest() async{
+  getRequest() async {
     // static const String cityHomeBusiness = '/home/listBusiness';
     await HttpUtil.request('/home/listBusiness');
   }
@@ -123,6 +125,21 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
+            ),
+            TextButton(
+              onPressed: () {
+                showDialog(
+                  context: context,
+                  builder: (BuildContext ctx) {
+                    return CustomerWebView(url: 'https://www.bilibili.com');
+                  },
+                );
+                // CustomerAction.openWebview(
+                //   context: context,
+                //   url: 'https://www.bilibili.com',
+                // );
+              },
+              child: Text('web'),
             ),
           ],
         ),
