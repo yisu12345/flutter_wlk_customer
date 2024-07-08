@@ -16,8 +16,9 @@ dependencies:
   get: ^4.6.5
   flutter_screenutil: ^5.9.0
   flustars_flutter3: ^3.0.0 #工具类 SpUtil，ScreenUtil, DirectoryUtil等等。
-  intl: ^0.18.1
-  flutter_widget_from_html_core: ^0.14.9 #html
+  pull_to_refresh: ^2.0.0
+  intl: ^0.19.0
+  flutter_widget_from_html_core: ^0.15.1 #html
   transparent_image: ^2.0.1 #图片懒加载
   flutter_cached_pdfview: ^0.4.2 #pdf文件
   webview_flutter: ^4.8.0
@@ -25,13 +26,14 @@ dependencies:
   perfect_volume_control: ^1.0.5 #声音
   screen_brightness: ^1.0.1 #亮度
   provider: ^6.0.3
-  wakelock: ^0.4.0
+  wakelock: ^0.6.2
+
 
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.0
+  flutter_lints: ^4.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
