@@ -297,9 +297,9 @@
     },
     {
       "name": "intl",
-      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/intl-0.18.1",
+      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/intl-0.19.0",
       "packageUri": "lib/",
-      "languageVersion": "2.12"
+      "languageVersion": "3.0"
     },
     {
       "name": "js",
@@ -782,7 +782,7 @@
       "languageVersion": "3.2"
     }
   ],
-  "generated": "2024-07-09T07:28:24.990675Z",
+  "generated": "2024-07-09T07:40:42.966106Z",
   "generator": "pub",
   "generatorVersion": "3.4.3",
   "flutterRoot": "file:///Users/threeone/flutter",
