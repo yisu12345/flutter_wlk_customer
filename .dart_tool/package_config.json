@@ -63,9 +63,9 @@
     },
     {
       "name": "decimal",
-      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/decimal-2.3.3",
+      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/decimal-3.0.2",
       "packageUri": "lib/",
-      "languageVersion": "2.14"
+      "languageVersion": "2.17"
     },
     {
       "name": "dio",
@@ -782,7 +782,7 @@
       "languageVersion": "3.2"
     }
   ],
-  "generated": "2024-07-09T07:40:42.966106Z",
+  "generated": "2024-07-09T07:44:51.008851Z",
   "generator": "pub",
   "generatorVersion": "3.4.3",
   "flutterRoot": "file:///Users/threeone/flutter",
