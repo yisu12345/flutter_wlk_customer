@@ -34,7 +34,8 @@ dependencies:
   perfect_volume_control: ^1.0.5 #声音
   screen_brightness: ^1.0.1 #亮度
   provider: ^6.0.3
-  wakelock: ^0.6.2
+#  wakelock: ^0.6.2
+  wakelock_plus: ^1.2.5
 
 
 
