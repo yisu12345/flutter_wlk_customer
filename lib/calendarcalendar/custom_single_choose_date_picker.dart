@@ -773,7 +773,7 @@ class _DatePickerModeToggleButtonState
                             widget.title,
                             overflow: TextOverflow.ellipsis,
                             style: widget.textStyle ??
-                                textTheme.subtitle2?.copyWith(
+                                textTheme.titleMedium?.copyWith(
                                   color: controlColor,
                                 ),
                           ),
@@ -990,10 +990,10 @@ class _DayPickerState extends State<_DayPicker> {
     final MaterialLocalizations localizations =
         MaterialLocalizations.of(context);
     final TextTheme textTheme = Theme.of(context).textTheme;
-    final TextStyle? headerStyle = textTheme.caption?.apply(
+    final TextStyle? headerStyle = textTheme.titleSmall?.apply(
       color: colorScheme.onSurface.withOpacity(0.60),
     );
-    final TextStyle dayStyle = textTheme.caption!;
+    final TextStyle dayStyle = textTheme.titleSmall!;
     final Color enabledDayColor = colorScheme.onSurface.withOpacity(0.87);
     final Color disabledDayColor = colorScheme.onSurface.withOpacity(0.38);
     final Color selectedDayColor = colorScheme.onPrimary;
@@ -1240,7 +1240,7 @@ class _YearPickerState extends State<_YearPicker> {
     } else {
       textColor = colorScheme.onSurface.withOpacity(0.87);
     }
-    final TextStyle? itemStyle = textTheme.bodyText1?.apply(color: textColor);
+    final TextStyle? itemStyle = textTheme.bodyMedium?.apply(color: textColor);
 
     BoxDecoration? decoration;
     if (isSelected) {
