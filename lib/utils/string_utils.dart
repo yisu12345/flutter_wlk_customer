@@ -1,4 +1,4 @@
-import 'package:intl/intl.dart';
+// import 'package:intl/intl.dart';
 
 extension StringUtils on String? {
   String get hidePhone => StringUtils._phoneString(phone: this);
@@ -52,8 +52,8 @@ extension StringUtils on String? {
       num? money = num.tryParse(priceStr);
       int truncateMoney = money?.truncate() ?? 0;
       if (truncateMoney >= 1000) {
-        NumberFormat format = NumberFormat('0,000');
-        return format.format(truncateMoney);
+        // NumberFormat format = NumberFormat('0,000');
+        return _formatNum(truncateMoney);
       } else {
         List<String> resultList = priceStr.split(".");
         if (resultList.isNotEmpty) {
@@ -64,6 +64,40 @@ extension StringUtils on String? {
       }
     } catch (error) {
       return '';
+    }
+  }
+
+  static String _formatNum(num, {point = 3}) {
+    if (num != null) {
+      String str = double.parse(num.toString()).toString();
+      // 分开截取
+      List<String> sub = str.split('.');
+      // 处理值
+      List val = List.from(sub[0].split(''));
+      // 处理点
+      List<String> points = List.from(sub[1].split(''));
+      //处理分割符
+      for (int index = 0, i = val.length - 1; i >= 0; index++, i--) {
+        // 除以三没有余数、不等于零并且不等于1 就加个逗号
+        if (index % 3 == 0 && index != 0 && i != 1) val[i] = val[i] + ',';
+      }
+      // 处理小数点
+      for (int i = 0; i <= point - points.length; i++) {
+        points.add('0');
+      }
+      //如果大于长度就截取
+      if (points.length > point) {
+        // 截取数组
+        points = points.sublist(0, point);
+      }
+      // 判断是否有长度
+      if (points.length > 0) {
+        return '${val.join('')}.${points.join('')}';
+      } else {
+        return val.join('');
+      }
+    } else {
+      return "0.0";
     }
   }
 
