@@ -1,5 +1,6 @@
 import 'package:example/CustomerWebView.dart';
 import 'package:example/common/http/http_unit.dart';
+import 'package:example/reshresh/resh_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_wlk_customer/utils/file/customer_file.dart';
@@ -8,6 +9,7 @@ void main() {
   configLoading();
   runApp(const MyApp());
 }
+
 void configLoading() {
   EasyLoading.instance
     ..displayDuration = const Duration(milliseconds: 2000)
@@ -22,8 +24,9 @@ void configLoading() {
     ..maskColor = Colors.blue.withOpacity(0.5)
     ..userInteractions = true
     ..dismissOnTap = false;
-    // ..customAnimation = CustomAnimation();
+  // ..customAnimation = CustomAnimation();
 }
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -157,6 +160,17 @@ class _MyHomePageState extends State<MyHomePage> {
                 // );
               },
               child: Text('web'),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const CustomerReshPage(),
+                  ),
+                );
+              },
+              child: Text('resh'),
             ),
           ],
         ),
