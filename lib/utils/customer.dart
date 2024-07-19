@@ -153,7 +153,7 @@ class CustomerMoneyText extends StatelessWidget {
             style: CustomerTextStyle(
               customerColor: unitColor ?? const Color(0xff333333),
               customerFontSize: unitFontSize ?? 12,
-              customerFontWeight: moneyFontWeight ?? FontWeight.bold,
+              customerFontWeight: unitFontWeight ?? FontWeight.bold,
             ),
           ),
           TextSpan(
@@ -161,7 +161,7 @@ class CustomerMoneyText extends StatelessWidget {
             style: CustomerTextStyle(
               customerColor: moneyColor ?? const Color(0xff333333),
               customerFontSize: moneyFontSize ?? 20,
-              customerFontWeight: unitFontWeight ?? FontWeight.bold,
+              customerFontWeight: moneyFontWeight ?? FontWeight.bold,
             ),
           ),
           TextSpan(
