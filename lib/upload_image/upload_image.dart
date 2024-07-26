@@ -18,6 +18,7 @@ class UploadImages extends StatefulWidget {
   final int? max; //最大照片数量
   final int? hNumber; //一排最大几个
   final bool? onlyShow; //仅展示，不操作
+  final BoxFit? fit;
   final List<String>? imagesList; //图片数组
   final String oSSAccessKeyId;
   final String policy;
@@ -41,6 +42,7 @@ class UploadImages extends StatefulWidget {
     required this.ossHost,
     required this.carmaWidget,
     this.hNumber = 3,
+    this.fit,
   });
 
   @override
@@ -89,7 +91,10 @@ class _UploadImagesState extends State<UploadImages> {
           String? imageUrl = imagesList[index];
           return cellDeleteWidget(
             index: index,
-            child: CustomerImagesNetworking(imageUrl: imageUrl),
+            child: CustomerImagesNetworking(
+              imageUrl: imageUrl,
+              fit: widget.fit ?? BoxFit.cover,
+            ),
           );
         } else {
           if (index == setImageListLength() - 1) {
@@ -98,7 +103,10 @@ class _UploadImagesState extends State<UploadImages> {
             String? imageUrl = imagesList[index];
             return cellDeleteWidget(
               index: index,
-              child: CustomerImagesNetworking(imageUrl: imageUrl),
+              child: CustomerImagesNetworking(
+                imageUrl: imageUrl,
+                fit: widget.fit ?? BoxFit.cover,
+              ),
             );
           }
         }

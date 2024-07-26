@@ -157,7 +157,12 @@ class DateTimeUtils {
 
   ///获取当年份
   static String get getYear {
-    return '2022';
+    return DateTime.now().year.toString();
+  }
+
+  ///获取当年份
+  static String getGMTString() {
+
     return DateTime.now().year.toString();
   }
 
