@@ -3,6 +3,7 @@ import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter_wlk_customer/utils/customer.dart';
 import 'package:flutter_wlk_customer/utils/toast_utils.dart';
@@ -149,7 +150,14 @@ class _UploadImagesState extends State<UploadImages> {
                   imagesList.removeAt(index);
                   setState(() {});
                 },
-                child: const Icon(Icons.delete),
+                child: ClipOval(
+                  child: Container(
+                    width: 30.w,
+                    height: 30.w,
+                    color: Colors.grey.withOpacity(0.5),
+                    child: const Icon(Icons.close),
+                  ),
+                ),
               ),
       ],
     );
