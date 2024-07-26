@@ -155,7 +155,13 @@ class _UploadImagesState extends State<UploadImages> {
                     width: 30.w,
                     height: 30.w,
                     color: Colors.grey.withOpacity(0.5),
-                    child: const Icon(Icons.close),
+                    child: Center(
+                      child: Icon(
+                        Icons.close,
+                        size: 25.w,
+                        color: Colors.grey,
+                      ),
+                    ),
                   ),
                 ),
               ),
