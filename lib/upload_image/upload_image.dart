@@ -159,7 +159,7 @@ class _UploadImagesState extends State<UploadImages> {
                       child: Icon(
                         Icons.close,
                         size: 25.w,
-                        color: Colors.grey,
+                        color: Colors.white,
                       ),
                     ),
                   ),
