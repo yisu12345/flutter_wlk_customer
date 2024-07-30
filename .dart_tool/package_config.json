@@ -476,6 +476,12 @@
       "languageVersion": "3.2"
     },
     {
+      "name": "photo_view",
+      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/photo_view-0.15.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "platform",
       "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/platform-3.1.5",
       "packageUri": "lib/",
@@ -794,7 +800,7 @@
       "languageVersion": "3.2"
     }
   ],
-  "generated": "2024-07-09T09:00:54.195224Z",
+  "generated": "2024-07-30T09:16:14.085410Z",
   "generator": "pub",
   "generatorVersion": "3.4.3",
   "flutterRoot": "file:///Users/threeone/flutter",
