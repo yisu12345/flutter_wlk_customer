@@ -28,6 +28,7 @@ class UploadImages extends StatefulWidget {
   final String ossDirectory;
   final String ossHost;
   final Widget carmaWidget;
+  final Function? oneTap; //点击的哪一个
 
   const UploadImages({
     super.key,
@@ -44,6 +45,7 @@ class UploadImages extends StatefulWidget {
     required this.carmaWidget,
     this.hNumber = 3,
     this.fit,
+    this.oneTap,
   });
 
   @override
@@ -92,9 +94,12 @@ class _UploadImagesState extends State<UploadImages> {
           String? imageUrl = imagesList[index];
           return cellDeleteWidget(
             index: index,
-            child: CustomerImagesNetworking(
-              imageUrl: imageUrl,
-              fit: widget.fit ?? BoxFit.cover,
+            child: GestureDetector(
+              onTap: () => widget.oneTap?.call(index),
+              child: imageNetworkWidget(
+                imageUrl: imageUrl,
+                index: index,
+              ),
             ),
           );
         } else {
@@ -104,9 +109,9 @@ class _UploadImagesState extends State<UploadImages> {
             String? imageUrl = imagesList[index];
             return cellDeleteWidget(
               index: index,
-              child: CustomerImagesNetworking(
+              child: imageNetworkWidget(
                 imageUrl: imageUrl,
-                fit: widget.fit ?? BoxFit.cover,
+                index: index,
               ),
             );
           }
@@ -114,6 +119,19 @@ class _UploadImagesState extends State<UploadImages> {
       },
       mainAxisSpacing: 15,
       crossAxisSpacing: 8,
+    );
+  }
+
+  Widget imageNetworkWidget({
+    required String imageUrl,
+    required int index,
+  }) {
+    return GestureDetector(
+      onTap: () => widget.oneTap?.call(index),
+      child: CustomerImagesNetworking(
+        imageUrl: imageUrl,
+        fit: widget.fit ?? BoxFit.cover,
+      ),
     );
   }
 
