@@ -30,13 +30,13 @@ class _CustomerWebViewState extends State<CustomerWebView> {
             // Update loading bar.
           },
           onPageStarted: (String url) async{
-            await EasyLoading.show(
-              // status: 'loading...',
-              maskType: EasyLoadingMaskType.black,
-            );
+            // await EasyLoading.show(
+            //   // status: 'loading...',
+            //   maskType: EasyLoadingMaskType.black,
+            // );
           },
           onPageFinished: (String url) async{
-            await EasyLoading.dismiss();
+            // await EasyLoading.dismiss();
           },
           onHttpError: (HttpResponseError error) {},
           onWebResourceError: (WebResourceError error) {},
