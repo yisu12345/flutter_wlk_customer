@@ -194,12 +194,14 @@ class _UploadImagesState extends State<UploadImages> {
         if (Platform.isIOS) {
           await chooseCamera(
             context: context,
+            max: widget.max,
           );
         } else {
           bool b = await requestPermission(context);
           if (b == true) {
             await chooseCamera(
               context: context,
+              max: widget.max,
             );
           }
         }
@@ -257,6 +259,7 @@ class _UploadImagesState extends State<UploadImages> {
   ///
   Future<void> chooseCamera({
     required BuildContext context,
+    int? max,
   }) async {
     //
     showCupertinoModalPopup(
@@ -264,7 +267,7 @@ class _UploadImagesState extends State<UploadImages> {
         builder: (BuildContext ctx) {
           return CupertinoActionSheet(
             title: const Text('上传图片'),
-            message: const Text('请选择上传方式\n相册最多六张'),
+            message: Text('请选择上传方式\n相册最多${max ?? 9}张'),
             actions: <Widget>[
               CupertinoActionSheetAction(
                 child: const Text('拍照上传'),
