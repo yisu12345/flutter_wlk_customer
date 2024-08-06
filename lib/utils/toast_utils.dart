@@ -30,7 +30,7 @@ class ToastUtils {
       successText ?? '成功',
       duration: const Duration(seconds: 2),
     );
-    _cancelToast();
+    cancelToast();
   }
 
   ///失败弹窗提示
@@ -39,7 +39,7 @@ class ToastUtils {
       errorText ?? '错误',
       duration: const Duration(seconds: 2),
     );
-    _cancelToast();
+    cancelToast();
   }
   ///底部自适应高度弹窗
   ///底部弹窗
@@ -54,7 +54,7 @@ class ToastUtils {
     bool isShowConfirm = false,
     Color? barrierColor,
   }) {
-    _cancelToast();
+    cancelToast();
     return showDialog(
         context: context,
         builder: (BuildContext ctx) {
@@ -145,7 +145,7 @@ class ToastUtils {
         });
   }
 
-  static _cancelToast() {
+  static cancelToast() {
     //  延时2秒
     EasyLoading.dismiss();
   }
