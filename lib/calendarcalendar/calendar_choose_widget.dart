@@ -64,7 +64,7 @@ class _CalendarChooseWidgetState extends State<CalendarChooseWidget> {
     });
     widget.tapAction
         ?.call({"startTime": startTime, "endTime": endTime ?? startTime});
-    Navigator.of(context).pop();
+    // Navigator.of(context).pop();
   }
 
   ///日期显示
