@@ -64,7 +64,7 @@ class ToastUtils {
             margin: EdgeInsets.only(
               top: MediaQuery.of(context).size.height / 2,
             ),
-            padding: EdgeInsets.only(bottom: 80.h),
+            padding: const EdgeInsets.only(bottom: 40),
             decoration: const BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.only(
