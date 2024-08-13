@@ -10,6 +10,7 @@ class CalendarChooseWidget extends StatefulWidget {
   final int? intervalDays; //间隔天数 (包括选中第一天和选中的最后一天)
   final DateTime? selectedDate; //默认选中日期
   final int? chooseIndex;
+  final double? fontSize;
 
   const CalendarChooseWidget({
     Key? key,
@@ -17,6 +18,7 @@ class CalendarChooseWidget extends StatefulWidget {
     this.intervalDays,
     this.selectedDate,
     this.chooseIndex = 0,
+    this.fontSize,
   }) : super(key: key);
 
   @override
@@ -165,7 +167,9 @@ class _CalendarChooseWidgetState extends State<CalendarChooseWidget> {
         children: [
           Text(
             dealTimeString,
-            style: const TextStyle(color: Color(0xff333333), fontSize: 16),
+            style: TextStyle(
+                color: const Color(0xff1A1A1A),
+                fontSize: widget.fontSize ?? 16),
           ),
           const Icon(
             Icons.keyboard_arrow_down_rounded,
