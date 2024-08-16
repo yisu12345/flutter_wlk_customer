@@ -51,6 +51,7 @@ class ToastUtils {
     Function? onConfirm,
     String? title,
     double? titleFontSize,
+    double? leftIconSize,
     Widget? contentWidget,
     Widget? header,
     bool isShowConfirm = false,
@@ -82,9 +83,11 @@ class ToastUtils {
                     Container(
                       padding: const EdgeInsets.only(bottom: 5),
                       decoration: const BoxDecoration(
-                          border: Border(
-                              bottom: BorderSide(
-                                  color: Color(0xffE1E1E1), width: 0.5))),
+                        border: Border(
+                          bottom:
+                              BorderSide(color: Color(0xffE1E1E1), width: 0.5),
+                        ),
+                      ),
                       child: Row(
                         children: [
                           GestureDetector(
@@ -93,9 +96,9 @@ class ToastUtils {
                               padding:
                                   const EdgeInsets.only(left: 6, right: 10),
                               color: Colors.transparent,
-                              child: const Icon(
+                              child: Icon(
                                 Icons.keyboard_arrow_down_rounded,
-                                size: 40,
+                                size: leftIconSize ?? 40,
                               ),
                             ),
                           ),
