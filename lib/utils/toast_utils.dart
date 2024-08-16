@@ -41,14 +41,16 @@ class ToastUtils {
     );
     cancelToast();
   }
+
   ///底部自适应高度弹窗
   ///底部弹窗
   static showBottomSheet({
     required BuildContext context,
     bool isTime = false,
-    double height = 200,
+    double? height,
     Function? onConfirm,
     String? title,
+    double? titleFontSize,
     Widget? contentWidget,
     Widget? header,
     bool isShowConfirm = false,
@@ -62,7 +64,9 @@ class ToastUtils {
             width: double.infinity,
             height: MediaQuery.of(context).size.height / 2,
             margin: EdgeInsets.only(
-              top: MediaQuery.of(context).size.height / 2,
+              top: height == null
+                  ? MediaQuery.of(context).size.height / 2
+                  : (MediaQuery.of(context).size.height - height),
             ),
             padding: const EdgeInsets.only(bottom: 40),
             decoration: const BoxDecoration(
@@ -100,10 +104,11 @@ class ToastUtils {
                               alignment: Alignment.center,
                               child: Text(
                                 title ?? '头部',
-                                style: const TextStyle(
-                                    color: Color(0xff333333),
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.bold),
+                                style: TextStyle(
+                                  color: const Color(0xff333333),
+                                  fontSize: titleFontSize ?? 18,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
                             ),
                           ),
@@ -150,4 +155,3 @@ class ToastUtils {
     EasyLoading.dismiss();
   }
 }
-
