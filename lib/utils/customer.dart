@@ -93,6 +93,24 @@ class CustomerImagesNetworking extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return Image.network(
+      key: Key(imageUrl),
+      imageUrl,
+      width: width,
+      height: height,
+      fit: fit,
+      errorBuilder: (_, object, s) {
+        return Container(
+          padding: const EdgeInsets.all(10),
+          child: Image.asset(
+            'assets/images/noContainer.png',
+            width: width,
+            height: width,
+            fit: fit ?? BoxFit.contain,
+          ),
+        );
+      },
+    );
     return imageUrl.contains('http') == true
         ? FadeInImage.memoryNetwork(
             placeholder: kTransparentImage,
