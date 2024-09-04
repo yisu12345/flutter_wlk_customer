@@ -101,12 +101,16 @@ class CustomerImagesNetworking extends StatelessWidget {
       fit: fit,
       errorBuilder: (_, object, s) {
         return Container(
-          padding: const EdgeInsets.all(10),
-          child: Image.asset(
-            'assets/images/noContainer.png',
-            width: width,
-            height: width,
-            fit: fit ?? BoxFit.contain,
+          width: width,
+          height: height,
+          padding: EdgeInsets.all((width ?? 0) / 2),
+          child: Center(
+            child: Image.asset(
+              'assets/images/noContainer.png',
+              // width: width /2,
+              // height: width /2,
+              fit: fit ?? BoxFit.contain,
+            ),
           ),
         );
       },
