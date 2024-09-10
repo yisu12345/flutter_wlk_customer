@@ -30,7 +30,7 @@ class DownLoadImageTool {
   }
 
   ///保存到相册
-  static void savePhoto({required String imageUrl}) async {
+  static Future<dynamic> savePhoto({required String imageUrl}) async {
     //获取保存相册权限，如果没有，则申请改权限
     bool permition = await getPormiation();
 
@@ -39,7 +39,7 @@ class DownLoadImageTool {
       if (Platform.isIOS) {
         if (status.isGranted) {
           var result =  imageRequest(imageUrl: imageUrl);
-          ToastUtils.showToast(msg: "保存成功");
+           return result;
         }
         if (status.isDenied) {
           print("IOS拒绝");
@@ -48,8 +48,7 @@ class DownLoadImageTool {
         //安卓
         if (status.isGranted) {
           var result = imageRequest(imageUrl: imageUrl);
-          // EasyLoading.showToast("保存成功");
-          ToastUtils.showToast(msg: "保存成功");
+          return result;
         }
       }
     } else {
@@ -69,6 +68,7 @@ class DownLoadImageTool {
         Uint8List.fromList(response.data),
         quality: 60,
         name: "hello");
+    print('=result ============ $result');
     return result;
   }
 }
