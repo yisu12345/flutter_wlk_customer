@@ -46,7 +46,7 @@ class DownLoadImageTool {
         }
       } else {
         //安卓
-        if (status.isGranted) {
+        if (status.isDenied) {
           var result = imageRequest(imageUrl: imageUrl);
           return result;
         }
