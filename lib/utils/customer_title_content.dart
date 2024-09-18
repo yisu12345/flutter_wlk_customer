@@ -62,7 +62,7 @@ class CustomerTitleAndContentWidget extends StatelessWidget {
                 text: unitTitle,
                 style: CustomerTextStyle(
                   customerFontSize: unitTitleFontSize,
-                  customerColor: unitContentColor ?? const Color(0xff399FFF),
+                  customerColor: unitTitleColor ?? const Color(0xff399FFF),
                   customerFontWeight: unitTitleFontWeight ?? FontWeight.normal,
                 ),
               ),
