@@ -7,12 +7,14 @@ class ShowDialogWidget extends StatelessWidget {
   final BuildContext? ctx;
   final Widget child;
   final EdgeInsetsGeometry padding;
+  final ScrollController? scrollController;
 
   const ShowDialogWidget({
     super.key,
     this.ctx,
     required this.child,
     required this.padding,
+    this.scrollController,
   });
 
   @override
@@ -33,6 +35,7 @@ class ShowDialogWidget extends StatelessWidget {
             child: Padding(
               padding: padding,
               child: SingleChildScrollView(
+                controller: scrollController,
                 child: child,
               ),
             ),
