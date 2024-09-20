@@ -2,6 +2,7 @@ import 'dart:io';
 import 'dart:typed_data';
 
 import 'package:dio/dio.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_wlk_customer/utils/toast_utils.dart';
 import 'package:image_gallery_saver/image_gallery_saver.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -53,17 +54,23 @@ class DownLoadImageTool {
       }
     } else {
       //重新请求--第一次请求权限时，保存方法不会走，需要重新调一次
-      savePhoto(imageUrl: imageUrl);
+      ToastUtils.showToast(msg: '请打开手机权限');
+      // savePhoto(imageUrl: imageUrl);
     }
   }
 
   static Future<dynamic> imageRequest({required String imageUrl}) async {
+    await EasyLoading.show(
+      // status: 'loading...',
+      maskType: EasyLoadingMaskType.black,
+    );
     var response = await Dio().get(
       imageUrl,
       options: Options(
         responseType: ResponseType.bytes,
       ),
     );
+    EasyLoading.dismiss();
     final result = await ImageGallerySaver.saveImage(
         Uint8List.fromList(response.data),
         quality: 60,
