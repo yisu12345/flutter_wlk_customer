@@ -3,6 +3,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_wlk_customer/utils/custom_dialog.dart';
+import 'package:get/get.dart';
 // import 'package:get/get.dart';
 
 class ToastUtils {
@@ -156,5 +158,42 @@ class ToastUtils {
   static cancelToast() {
     //  延时2秒
     EasyLoading.dismiss();
+  }
+
+  ///显示对话框
+  static showAlterDialog({
+    VoidCallback? confirmCallback,
+    VoidCallback? cancelCallback,
+    String? titleText,
+    String? contentText,
+    String? confirmText,
+    TextStyle? confirmStyle,
+    TextStyle? cancelStyle,
+  }) {
+    cancelToast();
+    return Get.dialog(
+      CustomDialog(
+        title: titleText ?? '温馨提示',
+        content: contentText ?? '您确定要退出当前登录吗?',
+        cancelText: "取消",
+        confirmText: "确定",
+        cancelTextStyle: cancelStyle,
+        confirmTextStyle: confirmStyle,
+        cancelCall: () {
+          Get.back();
+          Future.delayed(const Duration(milliseconds: 50)).then((value) {
+            if (cancelCallback != null) {
+              cancelCallback();
+            }
+          });
+        },
+        confirmCall: () {
+          Get.back();
+          if (confirmCallback != null) {
+            confirmCallback();
+          }
+        },
+      ),
+    );
   }
 }
