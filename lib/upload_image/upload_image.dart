@@ -29,6 +29,7 @@ class UploadImages extends StatefulWidget {
   final String ossHost;
   final Widget carmaWidget;
   final Function? oneTap; //点击的哪一个
+  final Function? deleteTap; //删除一个后
 
   const UploadImages({
     super.key,
@@ -46,6 +47,7 @@ class UploadImages extends StatefulWidget {
     this.hNumber = 3,
     this.fit,
     this.oneTap,
+    this.deleteTap,
   });
 
   @override
@@ -166,6 +168,7 @@ class _UploadImagesState extends State<UploadImages> {
             : GestureDetector(
                 onTap: () {
                   imagesList.removeAt(index);
+                  widget.deleteTap?.call(imagesList);
                   setState(() {});
                 },
                 child: ClipOval(
