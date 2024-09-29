@@ -133,6 +133,7 @@ class UploadImagesTool {
                 child: const Text('相册'),
                 onPressed: () {
                   openGallery(
+                    max: max,
                     oSSAccessKeyId: oSSAccessKeyId ?? '',
                     ossHost: ossHost ?? '',
                     ossDirectory: ossDirectory ?? '',
@@ -193,9 +194,10 @@ class UploadImagesTool {
     String? signature,
     String? ossDirectory,
     String? ossHost,
+    int? max,
   }) async {
     List<Media>? images = await ImagesPicker.pick(
-      count: 9,
+      count: max ?? 9,
       pickType: PickType.image,
     );
     List<String> list = [];
