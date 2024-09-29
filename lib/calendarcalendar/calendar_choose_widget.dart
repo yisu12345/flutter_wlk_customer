@@ -11,6 +11,7 @@ class CalendarChooseWidget extends StatefulWidget {
   final DateTime? selectedDate; //默认选中日期
   final int? chooseIndex;
   final double? fontSize;
+  final bool? onlyShow;
 
   const CalendarChooseWidget({
     Key? key,
@@ -19,6 +20,7 @@ class CalendarChooseWidget extends StatefulWidget {
     this.selectedDate,
     this.chooseIndex = 0,
     this.fontSize,
+    this.onlyShow,
   }) : super(key: key);
 
   @override
@@ -162,7 +164,7 @@ class _CalendarChooseWidgetState extends State<CalendarChooseWidget> {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: onTapDate,
+      onTap: widget.onlyShow == true ? null : onTapDate,
       child: Row(
         children: [
           Text(
@@ -171,10 +173,12 @@ class _CalendarChooseWidgetState extends State<CalendarChooseWidget> {
                 color: const Color(0xff1A1A1A),
                 fontSize: widget.fontSize ?? 16),
           ),
-          const Icon(
-            Icons.keyboard_arrow_down_rounded,
-            size: 15,
-          )
+          widget.onlyShow == true
+              ? const SizedBox()
+              : const Icon(
+                  Icons.keyboard_arrow_down_rounded,
+                  size: 15,
+                )
         ],
       ),
     );
