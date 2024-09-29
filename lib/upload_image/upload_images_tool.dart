@@ -18,11 +18,12 @@ class UploadImagesTool {
     String? ossHost,
     required BuildContext context,
     Function? chooseImagesTap,
+    int? max,
   }) async {
     if (Platform.isIOS) {
       await chooseCamera(
         context: context,
-        max: 9,
+        max: max ?? 9,
         oSSAccessKeyId: oSSAccessKeyId ?? '',
         ossHost: ossHost ?? '',
         ossDirectory: ossDirectory ?? '',
@@ -36,7 +37,7 @@ class UploadImagesTool {
       if (b == true) {
         await chooseCamera(
           context: context,
-          max: 9,
+          max: max ?? 9,
           oSSAccessKeyId: oSSAccessKeyId ?? '',
           ossHost: ossHost ?? '',
           ossDirectory: ossDirectory ?? '',
