@@ -106,7 +106,9 @@ class _UploadImagesState extends State<UploadImages> {
           );
         } else {
           if (index == setImageListLength() - 1) {
-            return uploadWidget(context);
+            return widget.onlyShow == true
+                ? const SizedBox()
+                : uploadWidget(context);
           } else {
             String? imageUrl = imagesList[index];
             return cellDeleteWidget(
