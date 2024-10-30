@@ -129,17 +129,35 @@ class DateTimeUtils {
 
 
   ///  计算两个日期相差day huor min？
-  static int differenceTwoDayHourTimes({
+  static String differenceTwoDayHourTimes({
     String? startTime,
     String? endTime,
   }) {
 
+    String xxxxx = '0';
     var startDate =
     startTime == null ? DateTime.now() : DateTime.parse(startTime);
     var endDate = endTime == null ? DateTime.now() : DateTime.parse(endTime);
     var days = endDate.difference(startDate).inDays;
+    if(days == 0){
+      //days == 0 相当
+      var hours = endDate.difference(startDate).inHours;
 
-    return days;
+      if(hours == 0){
+        var minutes = endDate.difference(startDate).inMinutes;
+        xxxxx = '$minutes分';
+      }else{
+        // xxxxx = hours;
+        var minutes = endDate.difference(startDate).inMinutes;
+
+        xxxxx = '${minutes ~/ 60}小时${minutes % 60}分';
+      }
+    }else{
+      // xxxxx = days;
+    }
+
+
+    return xxxxx;
   }
 
 
