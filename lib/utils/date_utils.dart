@@ -127,6 +127,23 @@ class DateTimeUtils {
     return days;
   }
 
+
+  ///  计算两个日期相差day huor min？
+  static int differenceTwoDayHourTimes({
+    String? startTime,
+    String? endTime,
+  }) {
+
+    var startDate =
+    startTime == null ? DateTime.now() : DateTime.parse(startTime);
+    var endDate = endTime == null ? DateTime.now() : DateTime.parse(endTime);
+    var days = endDate.difference(startDate).inDays;
+
+    return days;
+  }
+
+
+
   ///获取当前月份
   static String getCurrentMonth() {
     DateTime date = DateTime.now();
