@@ -11,6 +11,8 @@ class CalendarChooseWidget extends StatefulWidget {
   final DateTime? selectedDate; //默认选中日期
   final int? chooseIndex;
   final double? fontSize;
+
+  final FontWeight? fontWeight;
   final bool? onlyShow;
 
   const CalendarChooseWidget({
@@ -21,6 +23,7 @@ class CalendarChooseWidget extends StatefulWidget {
     this.chooseIndex = 0,
     this.fontSize,
     this.onlyShow,
+    this.fontWeight,
   }) : super(key: key);
 
   @override
@@ -170,8 +173,10 @@ class _CalendarChooseWidgetState extends State<CalendarChooseWidget> {
           Text(
             dealTimeString,
             style: TextStyle(
-                color: const Color(0xff1A1A1A),
-                fontSize: widget.fontSize ?? 16),
+              color: const Color(0xff1A1A1A),
+              fontSize: widget.fontSize ?? 16,
+              fontWeight: widget.fontWeight,
+            ),
           ),
           widget.onlyShow == true
               ? const SizedBox()
