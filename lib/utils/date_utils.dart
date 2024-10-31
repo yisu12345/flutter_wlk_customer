@@ -18,6 +18,7 @@ enum DateTimeUtilsType {
   hourMinute, // 01:01
   monthDayLine, // 01:01
   monthWord, //01月
+  monthDayHourMinutePoint, //01月
 }
 
 ///日期处理类
@@ -100,6 +101,11 @@ class DateTimeUtils {
             '/${date.day.toString().padLeft(2, '0')}';
       case DateTimeUtilsType.monthWord:
         return '${date.month.toString().padLeft(2, '0')}月';
+      case DateTimeUtilsType.monthDayHourMinutePoint:
+        return '${date.month.toString().padLeft(2, '0')}'
+            '.${date.day.toString().padLeft(2, '0')}'
+            ' ${date.hour.toString().padLeft(2, '0')}'
+            ':${date.minute.toString().padLeft(2, '0')}';
     }
   }
 
@@ -155,8 +161,6 @@ class DateTimeUtils {
     }else{
       // xxxxx = days;
     }
-
-
     return xxxxx;
   }
 
