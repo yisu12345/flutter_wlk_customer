@@ -48,6 +48,26 @@ class DownloadLocalTool {
     // print(result);
   }
 
+  ///save
+  Future<dynamic> saveNetworkVideoFileExternalStorageDirectory({
+    required String fileName,
+    required String fileUrl,
+  }) async {
+    final path = await getApplicationDocumentsDirectoryString();
+    String savePath = "$path/$fileName ";
+    // String fileUrl =
+    //     "https://s3.cn-north-1.amazonaws.com.cn/mtab.kezaihui.com/video/ForBiggerBlazes.mp4";
+    //
+    await Dio().download(fileUrl, savePath, onReceiveProgress: (count, total) {
+      print("${(count / total * 100).toStringAsFixed(0)}%");
+    });
+    final result = await ImageGallerySaver.saveFile(savePath);
+    return result;
+    // print(result);
+  }
+
+
+
 
 // // 将数据写入文件
 //   Future<File> writeCounter(int counter) async {
