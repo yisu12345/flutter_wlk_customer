@@ -162,7 +162,7 @@ class DateTimeUtils {
     }else{
       // xxxxx = days;
       var hours = endDate.difference(startDate).inHours;
-      int divisor = 60 * 24;   // 除数
+      int divisor = 24;   // 除数
       int quotient = hours ~/ divisor; // 取整除法，得到商
       int remainder = hours % divisor; // 取余数，得到余数
       //
