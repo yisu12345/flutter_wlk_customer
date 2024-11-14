@@ -138,6 +138,7 @@ class DateTimeUtils {
   static String differenceTwoDayHourTimes({
     String? startTime,
     String? endTime,
+
   }) {
 
     String xxxxx = '0';
@@ -160,6 +161,14 @@ class DateTimeUtils {
       }
     }else{
       // xxxxx = days;
+      var hours = endDate.difference(startDate).inHours;
+      int divisor = 60 * 24;   // 除数
+      int quotient = hours ~/ divisor; // 取整除法，得到商
+      int remainder = hours % divisor; // 取余数，得到余数
+      //
+      // print('商: $quotient');
+      // print('余数: $remainder');
+      xxxxx = '$quotient天$remainder小时';
     }
     return xxxxx;
   }
