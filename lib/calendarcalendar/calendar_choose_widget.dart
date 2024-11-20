@@ -11,7 +11,7 @@ class CalendarChooseWidget extends StatefulWidget {
   final DateTime? selectedDate; //默认选中日期
   final int? chooseIndex;
   final double? fontSize;
-
+  final DateTimeUtilsType? dateTimeUtilsType;
   final FontWeight? fontWeight;
   final bool? onlyShow;
 
@@ -24,6 +24,7 @@ class CalendarChooseWidget extends StatefulWidget {
     this.fontSize,
     this.onlyShow,
     this.fontWeight,
+    this.dateTimeUtilsType,
   }) : super(key: key);
 
   @override
@@ -80,20 +81,24 @@ class _CalendarChooseWidgetState extends State<CalendarChooseWidget> {
     if (endTime == null) {
       time = DateTimeUtils.dateTimeUtilsTool(
         dateTime: startTime.toString(),
-        dateTimeUtilsType: DateTimeUtilsType.yearMonthDay,
+        dateTimeUtilsType:
+            widget.dateTimeUtilsType ?? DateTimeUtilsType.yearMonthDay,
       );
     } else if (endTime == startTime) {
       time = DateTimeUtils.dateTimeUtilsTool(
         dateTime: startTime.toString(),
-        dateTimeUtilsType: DateTimeUtilsType.yearMonthDay,
+        dateTimeUtilsType:
+            widget.dateTimeUtilsType ?? DateTimeUtilsType.yearMonthDay,
       );
     } else {
       time = "${DateTimeUtils.dateTimeUtilsTool(
         dateTime: startTime.toString(),
-        dateTimeUtilsType: DateTimeUtilsType.yearMonthDay,
+        dateTimeUtilsType:
+            widget.dateTimeUtilsType ?? DateTimeUtilsType.yearMonthDay,
       )} - ${DateTimeUtils.dateTimeUtilsTool(
         dateTime: endTime.toString(),
-        dateTimeUtilsType: DateTimeUtilsType.yearMonthDay,
+        dateTimeUtilsType:
+            widget.dateTimeUtilsType ?? DateTimeUtilsType.yearMonthDay,
       )}";
     }
     return time;
