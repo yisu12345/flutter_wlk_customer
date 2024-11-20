@@ -14,9 +14,10 @@ class CalendarChooseWidget extends StatefulWidget {
   final DateTimeUtilsType? dateTimeUtilsType;
   final FontWeight? fontWeight;
   final bool? onlyShow;
+  final Color? textColor;
 
   const CalendarChooseWidget({
-    Key? key,
+    super.key,
     this.tapAction,
     this.intervalDays,
     this.selectedDate,
@@ -25,7 +26,8 @@ class CalendarChooseWidget extends StatefulWidget {
     this.onlyShow,
     this.fontWeight,
     this.dateTimeUtilsType,
-  }) : super(key: key);
+    this.textColor,
+  });
 
   @override
   _CalendarChooseWidgetState createState() => _CalendarChooseWidgetState();
@@ -178,7 +180,7 @@ class _CalendarChooseWidgetState extends State<CalendarChooseWidget> {
           Text(
             dealTimeString,
             style: TextStyle(
-              color: const Color(0xff1A1A1A),
+              color: widget.textColor ?? const Color(0xff1A1A1A),
               fontSize: widget.fontSize ?? 16,
               fontWeight: widget.fontWeight,
             ),
