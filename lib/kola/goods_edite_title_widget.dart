@@ -124,6 +124,7 @@ class GoodsEditeTextFiled extends StatefulWidget {
   final int? maxNumberText;
   final bool? hadOver; //是否必须输入才返回，默认是false
   final TextInputAction? textInputAction;
+  final TextAlign? textAlign;
 
   const GoodsEditeTextFiled({
     super.key,
@@ -142,6 +143,7 @@ class GoodsEditeTextFiled extends StatefulWidget {
     this.maxNumberText,
     this.hadOver = false,
     this.textInputAction,
+    this.textAlign,
   });
 
   @override
@@ -169,6 +171,7 @@ class _GoodsEditeTextFiledState extends State<GoodsEditeTextFiled> {
         alignment: Alignment.bottomRight,
         children: [
           TextField(
+            textAlign: widget.textAlign ?? TextAlign.start,
             controller: controller,
             focusNode: focusNode,
             maxLength: widget.maxNumberText,
