@@ -15,6 +15,7 @@ class CalendarChooseWidget extends StatefulWidget {
   final FontWeight? fontWeight;
   final bool? onlyShow;
   final Color? textColor;
+  final bool? isScafforrd;
 
   const CalendarChooseWidget({
     super.key,
@@ -27,6 +28,7 @@ class CalendarChooseWidget extends StatefulWidget {
     this.fontWeight,
     this.dateTimeUtilsType,
     this.textColor,
+    this.isScafforrd,
   });
 
   @override
@@ -173,26 +175,50 @@ class _CalendarChooseWidgetState extends State<CalendarChooseWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: widget.onlyShow == true ? null : onTapDate,
-      child: Row(
-        children: [
-          Text(
-            dealTimeString,
-            style: TextStyle(
-              color: widget.textColor ?? const Color(0xff1A1A1A),
-              fontSize: widget.fontSize ?? 16,
-              fontWeight: widget.fontWeight,
+    return widget.isScafforrd == true
+        ? Scaffold(
+            body: InkWell(
+              onTap: widget.onlyShow == true ? null : onTapDate,
+              child: Row(
+                children: [
+                  Text(
+                    dealTimeString,
+                    style: TextStyle(
+                      color: widget.textColor ?? const Color(0xff1A1A1A),
+                      fontSize: widget.fontSize ?? 16,
+                      fontWeight: widget.fontWeight,
+                    ),
+                  ),
+                  widget.onlyShow == true
+                      ? const SizedBox()
+                      : const Icon(
+                          Icons.keyboard_arrow_down_rounded,
+                          size: 15,
+                        )
+                ],
+              ),
             ),
-          ),
-          widget.onlyShow == true
-              ? const SizedBox()
-              : const Icon(
-                  Icons.keyboard_arrow_down_rounded,
-                  size: 15,
-                )
-        ],
-      ),
-    );
+          )
+        : InkWell(
+            onTap: widget.onlyShow == true ? null : onTapDate,
+            child: Row(
+              children: [
+                Text(
+                  dealTimeString,
+                  style: TextStyle(
+                    color: widget.textColor ?? const Color(0xff1A1A1A),
+                    fontSize: widget.fontSize ?? 16,
+                    fontWeight: widget.fontWeight,
+                  ),
+                ),
+                widget.onlyShow == true
+                    ? const SizedBox()
+                    : const Icon(
+                        Icons.keyboard_arrow_down_rounded,
+                        size: 15,
+                      )
+              ],
+            ),
+          );
   }
 }
