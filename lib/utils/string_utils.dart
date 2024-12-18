@@ -1,4 +1,4 @@
-// import 'package:intl/intl.dart';
+import 'package:intl/intl.dart';
 
 extension StringUtils on String? {
   String get hidePhone => StringUtils._phoneString(phone: this);

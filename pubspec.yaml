@@ -26,14 +26,14 @@ dependencies:
   images_picker: ^1.2.11 #相册多选
   image_gallery_saver: ^2.0.3 #保存到相册
   photo_view: ^0.15.0 #查看大图
-#  intl: ^0.19.0
+  intl: ^0.20.1
   flutter_widget_from_html_core: ^0.15.1 #html
   transparent_image: ^2.0.1 #图片懒加载
   flutter_cached_pdfview: ^0.4.2 #pdf文件
   webview_flutter: ^4.8.0
   video_player: ^2.6.1 #视频
   perfect_volume_control: ^1.0.5 #声音
-  screen_brightness: ^1.0.1 #亮度
+  screen_brightness: ^2.0.1 #亮度
   provider: ^6.0.3
 #  wakelock: ^0.6.2
   wakelock_plus: ^1.2.5

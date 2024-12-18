@@ -75,9 +75,9 @@
     },
     {
       "name": "decimal",
-      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/decimal-3.0.2",
+      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/decimal-3.1.0",
       "packageUri": "lib/",
-      "languageVersion": "2.17"
+      "languageVersion": "3.3"
     },
     {
       "name": "dio",
@@ -111,7 +111,7 @@
     },
     {
       "name": "file_selector_linux",
-      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/file_selector_linux-0.9.3",
+      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/file_selector_linux-0.9.3+2",
       "packageUri": "lib/",
       "languageVersion": "3.3"
     },
@@ -309,9 +309,9 @@
     },
     {
       "name": "intl",
-      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/intl-0.19.0",
+      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/intl-0.20.1",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.3"
     },
     {
       "name": "leak_tracker",
@@ -375,13 +375,13 @@
     },
     {
       "name": "package_info_plus",
-      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/package_info_plus-8.1.0",
+      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/package_info_plus-8.1.2",
       "packageUri": "lib/",
       "languageVersion": "3.3"
     },
     {
       "name": "package_info_plus_platform_interface",
-      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/package_info_plus_platform_interface-3.0.1",
+      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/package_info_plus_platform_interface-3.0.2",
       "packageUri": "lib/",
       "languageVersion": "2.18"
     },
@@ -405,9 +405,9 @@
     },
     {
       "name": "path_provider_foundation",
-      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/path_provider_foundation-2.4.0",
+      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/path_provider_foundation-2.4.1",
       "packageUri": "lib/",
-      "languageVersion": "3.2"
+      "languageVersion": "3.3"
     },
     {
       "name": "path_provider_linux",
@@ -453,7 +453,7 @@
     },
     {
       "name": "permission_handler_html",
-      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/permission_handler_html-0.1.3+2",
+      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/permission_handler_html-0.1.3+5",
       "packageUri": "lib/",
       "languageVersion": "3.3"
     },
@@ -519,43 +519,43 @@
     },
     {
       "name": "screen_brightness",
-      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/screen_brightness-1.0.1",
+      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/screen_brightness-2.0.1",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
     {
       "name": "screen_brightness_android",
-      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/screen_brightness_android-1.0.1",
+      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/screen_brightness_android-2.0.0",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
     {
       "name": "screen_brightness_ios",
-      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/screen_brightness_ios-1.0.1",
+      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/screen_brightness_ios-2.0.0",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
     {
       "name": "screen_brightness_macos",
-      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/screen_brightness_macos-1.0.1",
+      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/screen_brightness_macos-2.0.0",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
     {
       "name": "screen_brightness_platform_interface",
-      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/screen_brightness_platform_interface-1.0.1",
+      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/screen_brightness_platform_interface-2.0.0",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
     {
       "name": "screen_brightness_windows",
-      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/screen_brightness_windows-1.0.1",
+      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/screen_brightness_windows-2.0.1",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
     {
       "name": "shared_preferences",
-      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/shared_preferences-2.3.2",
+      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/shared_preferences-2.3.3",
       "packageUri": "lib/",
       "languageVersion": "3.4"
     },
@@ -567,9 +567,9 @@
     },
     {
       "name": "shared_preferences_foundation",
-      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/shared_preferences_foundation-2.5.3",
+      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/shared_preferences_foundation-2.5.4",
       "packageUri": "lib/",
-      "languageVersion": "3.3"
+      "languageVersion": "3.4"
     },
     {
       "name": "shared_preferences_linux",
@@ -699,19 +699,19 @@
     },
     {
       "name": "url_launcher_ios",
-      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/url_launcher_ios-6.3.1",
+      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/url_launcher_ios-6.3.2",
       "packageUri": "lib/",
-      "languageVersion": "3.2"
+      "languageVersion": "3.3"
     },
     {
       "name": "url_launcher_linux",
-      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/url_launcher_linux-3.2.0",
+      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/url_launcher_linux-3.2.1",
       "packageUri": "lib/",
       "languageVersion": "3.3"
     },
     {
       "name": "url_launcher_macos",
-      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/url_launcher_macos-3.2.1",
+      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/url_launcher_macos-3.2.2",
       "packageUri": "lib/",
       "languageVersion": "3.3"
     },
@@ -759,7 +759,7 @@
     },
     {
       "name": "video_player_avfoundation",
-      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/video_player_avfoundation-2.6.2",
+      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/video_player_avfoundation-2.6.5",
       "packageUri": "lib/",
       "languageVersion": "3.3"
     },
@@ -848,7 +848,7 @@
       "languageVersion": "3.2"
     }
   ],
-  "generated": "2024-11-04T06:32:00.968036Z",
+  "generated": "2024-12-18T09:16:19.809759Z",
   "generator": "pub",
   "generatorVersion": "3.4.3",
   "flutterRoot": "file:///Users/threeone/flutter",
