@@ -47,9 +47,9 @@ dbus
 file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/dbus-0.7.10/
 file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/dbus-0.7.10/lib/
 decimal
-3.3
-file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/decimal-3.1.0/
-file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/decimal-3.1.0/lib/
+2.17
+file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/decimal-3.0.2/
+file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/decimal-3.0.2/lib/
 dio
 2.18
 file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/dio-5.7.0/
@@ -191,9 +191,9 @@ images_picker
 file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/images_picker-1.2.11/
 file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/images_picker-1.2.11/lib/
 intl
-3.3
-file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/intl-0.20.1/
-file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/intl-0.20.1/lib/
+3.0
+file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/intl-0.19.0/
+file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/intl-0.19.0/lib/
 leak_tracker
 3.2
 file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/leak_tracker-10.0.4/
