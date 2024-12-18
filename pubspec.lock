@@ -401,7 +401,7 @@ packages:
     source: hosted
     version: "1.2.11"
   intl:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: intl
       sha256: "00f33b908655e606b86d2ade4710a231b802eec6f11e87e4ea3783fd72077a50"
