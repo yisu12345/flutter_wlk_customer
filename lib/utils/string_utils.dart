@@ -9,6 +9,8 @@ extension StringUtils on String? {
 
   String get toPrice => StringUtils._cutOutPrice(price: this);
 
+  String get toSplMoney => StringUtils._splNumberInsyo(str: this);
+
   String get toThousandPrice => StringUtils._formatThousandPrice(price: this);
 
   double get toDouble => StringUtils._strToDouble(str: this);
@@ -99,6 +101,17 @@ extension StringUtils on String? {
     } else {
       return "0.0";
     }
+  }
+
+  ///将数字转换位千分位隔开
+  static String _splNumberInsyo({String? str}) {
+    num amount = num.parse(str ?? '0');
+    final NumberFormat formatter = NumberFormat.currency(
+      locale: 'en_US', // 设置为你的本地化Locale
+      decimalDigits: 0,
+      name: '', // 设置货币符号，例如 'USD' 或 'EUR'
+    );
+    return formatter.format(amount);
   }
 
   ///将字符串转为double
