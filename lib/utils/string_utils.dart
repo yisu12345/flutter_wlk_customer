@@ -105,6 +105,9 @@ extension StringUtils on String? {
 
   ///将数字转换位千分位隔开
   static String _splNumberInsyo({String? str}) {
+    if (str == null) {
+      return '';
+    }
     num amount = num.parse(str ?? '0');
     final NumberFormat formatter = NumberFormat.currency(
       locale: 'en_US', // 设置为你的本地化Locale
