@@ -105,7 +105,7 @@ extension StringUtils on String? {
 
   ///将数字转换位千分位隔开
   static String _splNumberInsyo({String? str}) {
-    if (str == null) {
+    if (str?.isEmpty == true) {
       return '';
     }
     num amount = num.parse(str ?? '0');
