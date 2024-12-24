@@ -75,9 +75,9 @@
     },
     {
       "name": "decimal",
-      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/decimal-3.1.0",
+      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/decimal-3.0.2",
       "packageUri": "lib/",
-      "languageVersion": "3.3"
+      "languageVersion": "2.17"
     },
     {
       "name": "dio",
@@ -309,9 +309,9 @@
     },
     {
       "name": "intl",
-      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/intl-0.20.1",
+      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/intl-0.19.0",
       "packageUri": "lib/",
-      "languageVersion": "3.3"
+      "languageVersion": "3.0"
     },
     {
       "name": "leak_tracker",
@@ -866,7 +866,7 @@
       "languageVersion": "3.2"
     }
   ],
-  "generated": "2024-12-24T06:03:44.605728Z",
+  "generated": "2024-12-24T06:13:20.206899Z",
   "generator": "pub",
   "generatorVersion": "3.6.0",
   "flutterRoot": "file:///Users/threeone/flutter",
