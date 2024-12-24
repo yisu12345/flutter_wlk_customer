@@ -301,7 +301,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: f90232f789de2a23ce85b197d48ca0293d4d97a3
+      resolved-ref: "3adb1e5026034029d741843fac7a0615e42267e6"
       url: "https://github.com/yisu12345/flutter_wlk_customer.git"
     source: git
     version: "0.0.1"
