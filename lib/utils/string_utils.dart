@@ -1,7 +1,5 @@
 // import 'package:intl/intl.dart';
 
-import 'package:intl/intl.dart';
-
 extension StringUtils on String? {
   String get hidePhone => StringUtils._phoneString(phone: this);
 
@@ -110,13 +108,14 @@ extension StringUtils on String? {
     if (str?.isEmpty == true) {
       return '';
     }
-    num amount = num.parse(str ?? '0');
-    final NumberFormat formatter = NumberFormat.currency(
-      locale: 'en_US', // 设置为你的本地化Locale
-      decimalDigits: 0,
-      name: '', // 设置货币符号，例如 'USD' 或 'EUR'
-    );
-    return formatter.format(amount);
+    // num amount = num.parse(str ?? '0');
+    // final NumberFormat formatter = NumberFormat.currency(
+    //   locale: 'en_US', // 设置为你的本地化Locale
+    //   decimalDigits: 0,
+    //   name: '', // 设置货币符号，例如 'USD' 或 'EUR'
+    // );
+    // return formatter.format(amount);
+    return str ?? '';
   }
 
   ///将字符串转为double
