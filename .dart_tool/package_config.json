@@ -857,10 +857,10 @@
       "name": "flutter_wlk_customer",
       "rootUri": "../",
       "packageUri": "lib/",
-      "languageVersion": "3.2"
+      "languageVersion": "3.5"
     }
   ],
-  "generated": "2024-12-25T06:05:01.372496Z",
+  "generated": "2024-12-25T06:23:39.583725Z",
   "generator": "pub",
   "generatorVersion": "3.6.0",
   "flutterRoot": "file:///Users/threeone/flutter",
