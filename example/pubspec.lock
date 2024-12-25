@@ -301,7 +301,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: "3adb1e5026034029d741843fac7a0615e42267e6"
+      resolved-ref: "7a6f11167e2a49ed6f2ab93341cca823a81fc19d"
       url: "https://github.com/yisu12345/flutter_wlk_customer.git"
     source: git
     version: "0.0.1"
@@ -409,14 +409,6 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "0.2.1+1"
-  images_picker:
-    dependency: transitive
-    description:
-      name: images_picker
-      sha256: cc99347a6fa93228bf92f15ce36e4474256e4af0e6c0e1f0e7e9f047adbccd5b
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "1.2.11"
   intl:
     dependency: transitive
     description:
