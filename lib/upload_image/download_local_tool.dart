@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:dio/dio.dart';
-import 'package:image_gallery_saver/image_gallery_saver.dart';
+import 'package:image_gallery_saver_plus/image_gallery_saver_plus.dart';
+// import 'package:image_gallery_saver/image_gallery_saver.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
 
@@ -43,7 +44,7 @@ class DownloadLocalTool {
     await Dio().download(fileUrl, savePath, onReceiveProgress: (count, total) {
       print("${(count / total * 100).toStringAsFixed(0)}%");
     });
-    final result = await ImageGallerySaver.saveFile(savePath);
+    final result = await ImageGallerySaverPlus.saveFile(savePath);
     return result;
     // print(result);
   }
@@ -61,7 +62,7 @@ class DownloadLocalTool {
     await Dio().download(fileUrl, savePath, onReceiveProgress: (count, total) {
       print("${(count / total * 100).toStringAsFixed(0)}%");
     });
-    final result = await ImageGallerySaver.saveFile(savePath);
+    final result = await ImageGallerySaverPlus.saveFile(savePath);
     return result;
     // print(result);
   }

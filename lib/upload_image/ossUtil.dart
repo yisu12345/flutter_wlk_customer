@@ -9,7 +9,8 @@ import "package:dio/dio.dart";
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_wlk_customer/utils/toast_utils.dart';
-import 'package:image_gallery_saver/image_gallery_saver.dart';
+import 'package:image_gallery_saver_plus/image_gallery_saver_plus.dart';
+// import 'package:image_gallery_saver/image_gallery_saver.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
 
@@ -226,7 +227,7 @@ class UploadWidgetOss {
       if (Platform.isIOS) {
         if (status.isGranted) {
           Uint8List images = byteData!.buffer.asUint8List();
-          final result = await ImageGallerySaver.saveImage(images,
+          final result = await ImageGallerySaverPlus.saveImage(images,
               quality: 60, name: "hello");
           // EasyLoading.showToast("保存成功");
           ToastUtils.showToast(msg: "保存成功");
@@ -239,7 +240,7 @@ class UploadWidgetOss {
         if (status.isGranted) {
           print("Android已授权");
           Uint8List images = byteData!.buffer.asUint8List();
-          final result = await ImageGallerySaver.saveImage(images, quality: 60);
+          final result = await ImageGallerySaverPlus.saveImage(images, quality: 60);
           if (result != null) {
             // EasyLoading.showToast("保存成功");
             ToastUtils.showToast(msg: "保存成功");

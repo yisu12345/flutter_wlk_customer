@@ -4,7 +4,8 @@ import 'dart:typed_data';
 import 'package:dio/dio.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_wlk_customer/utils/toast_utils.dart';
-import 'package:image_gallery_saver/image_gallery_saver.dart';
+import 'package:image_gallery_saver_plus/image_gallery_saver_plus.dart';
+// import 'package:image_gallery_saver/image_gallery_saver.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 class DownLoadImageTool {
@@ -71,7 +72,7 @@ class DownLoadImageTool {
       ),
     );
     EasyLoading.dismiss();
-    final result = await ImageGallerySaver.saveImage(
+    final result = await ImageGallerySaverPlus.saveImage(
         Uint8List.fromList(response.data),
         quality: 60,
         name: "hello");
