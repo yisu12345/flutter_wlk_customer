@@ -3,6 +3,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_widget_from_html_core/flutter_widget_from_html_core.dart';
 import 'package:transparent_image/transparent_image.dart';
 
+
+
+
 ///字体样式
 class CustomerTextStyle extends TextStyle {
   final Color? customerColor;

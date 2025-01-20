@@ -8,6 +8,7 @@ import 'package:crypto/crypto.dart';
 import "package:dio/dio.dart";
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_wlk_customer/utils/toast_utils.dart';
 import 'package:image_gallery_saver_plus/image_gallery_saver_plus.dart';
 // import 'package:image_gallery_saver/image_gallery_saver.dart';
@@ -49,7 +50,10 @@ class UploadOss {
       'success_action_status': '200',
       'file': MultipartFile.fromFileSync(path),
     });
-
+    await EasyLoading.show(
+      // status: 'loading...',
+      maskType: EasyLoadingMaskType.black,
+    );
     Dio dio = Dio();
     dio.options.responseType = ResponseType.plain;
     dio.options.contentType = "application/xml";
@@ -59,9 +63,11 @@ class UploadOss {
         ossHost,
         data: formdata,
       );
+      EasyLoading.dismiss();
       // 成功后返回文件访问路径
       return "$ossHost/$ossDirectory/$pathName";
     } on DioError catch (e) {
+      EasyLoading.dismiss();
       print("e.message ===== ${e.message}");
       print("e.data ===== ${e.response?.data}");
       // print("e.headers ===== ${e.response?.headers}");
