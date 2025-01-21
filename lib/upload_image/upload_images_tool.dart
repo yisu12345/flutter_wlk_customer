@@ -5,7 +5,7 @@ import 'package:flutter_wlk_customer/upload_image/ossUtil.dart';
 import 'package:flutter_wlk_customer/utils/toast_utils.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:images_picker/images_picker.dart';
+// import 'package:images_picker/images_picker.dart';
 // import 'package:images_picker/images_picker.dart';
 import 'package:permission_handler/permission_handler.dart';
 
@@ -197,30 +197,26 @@ class UploadImagesTool {
     String? ossHost,
     int? max,
   }) async {
-    List<Media>? images = await ImagesPicker.pick(
-      count: max ?? 9,
-      pickType: PickType.image,
-    );
-    // List<XFile>? images = await ImagePicker().pickMultiImage(limit: max ?? 9,);
+    // List<Media>? images = await ImagesPicker.pick(
+    //   count: max ?? 9,
+    //   pickType: PickType.image,
+    // );
+    List<XFile>? images = await ImagePicker().pickMultiImage(limit: max ?? 9,);
     List<String> list = [];
-    if (images != null) {
-      for (var element in images) {
-        String path = await saveNetworkImgGallery(
-          element.path,
-          oSSAccessKeyId: oSSAccessKeyId ?? '',
-          ossHost: ossHost ?? '',
-          ossDirectory: ossDirectory ?? '',
-          policy: policy ?? '',
-          callback: callback ?? '',
-          signature: signature ?? '',
-        );
-        list.add(path);
-      }
-      chooseImages?.call(list);
-    } else {
-      ToastUtils.showToast(msg: "请选择图片");
+    for (var element in images) {
+      String path = await saveNetworkImgGallery(
+        element.path,
+        oSSAccessKeyId: oSSAccessKeyId ?? '',
+        ossHost: ossHost ?? '',
+        ossDirectory: ossDirectory ?? '',
+        policy: policy ?? '',
+        callback: callback ?? '',
+        signature: signature ?? '',
+      );
+      list.add(path);
     }
-  }
+    chooseImages?.call(list);
+    }
 
   // 保存网络图片
   static Future<String> saveNetworkImg(
