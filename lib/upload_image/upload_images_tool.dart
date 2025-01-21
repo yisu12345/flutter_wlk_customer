@@ -201,7 +201,7 @@ class UploadImagesTool {
     //   count: max ?? 9,
     //   pickType: PickType.image,
     // );
-    List<XFile>? images = await ImagePicker().pickMultiImage(limit: max ?? 9,);
+    List<XFile>? images = await ImagePicker().pickMultiImage(limit: 9,);
     List<String> list = [];
     for (var element in images) {
       String path = await saveNetworkImgGallery(
