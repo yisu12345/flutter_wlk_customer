@@ -65,7 +65,7 @@ class DownLoadImageTool {
       }
     } else {
       //重新请求--第一次请求权限时，保存方法不会走，需要重新调一次
-      ToastUtils.showToast(msg: '请打开手机权限');
+      ToastUtils.showToast(msg: '请打开手机相册权限');
       // savePhoto(imageUrl: imageUrl);
     }
   }
