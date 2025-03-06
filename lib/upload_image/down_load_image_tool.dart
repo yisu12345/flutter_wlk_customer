@@ -13,7 +13,7 @@ class DownLoadImageTool {
   //申请存本地相册权限
   static Future<bool> getPormiation() async {
     if (Platform.isIOS) {
-      var status = await Permission.photos.status;
+      var status = await Permission.photos.request();
       if (status.isDenied) {
         Map<Permission, PermissionStatus> statuses = await [
           Permission.photos,
