@@ -94,9 +94,11 @@ class DownLoadImageTool {
     }
 
     final result = await ImageGallerySaverPlus.saveImage(
-        Uint8List.fromList(response.data),
-        quality: 60,
-        name: "hello");
+      Uint8List.fromList(response.data),
+      quality: 60,
+      name: "hello",
+      isReturnImagePathOfIOS: true,
+    );
     print('=result ============ $result');
     return result;
   }
