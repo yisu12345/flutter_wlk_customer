@@ -102,4 +102,34 @@ class DownLoadImageTool {
     print('=result ============ $result');
     return result;
   }
+
+  ///fetchImageAsUint8List
+  static Future<Uint8List?> fetchImageAsUint8List(String imageUrl) async {
+    await EasyLoading.show(
+      // status: 'loading...',
+      maskType: EasyLoadingMaskType.black,
+    );
+    try {
+      var response = await Dio().get(
+        imageUrl,
+        options: Options(
+          responseType: ResponseType.bytes,
+        ),
+      );
+      // final response = await http.get(Uri.parse(imageUrl));
+      if (response.statusCode == 200) {
+        EasyLoading.dismiss();
+        return response.data;
+      } else {
+        // debugPrint('Failed to load image: ${response.statusCode}');
+        EasyLoading.dismiss();
+        return null;
+      }
+
+    } catch (e) {
+      EasyLoading.dismiss();
+      // debugPrint('Error fetching image: $e');
+      return null;
+    }
+  }
 }
