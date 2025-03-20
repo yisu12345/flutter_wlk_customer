@@ -23,6 +23,7 @@ class JHYJColors {
   static const Color redTextColor = Color(0xffF84B4B);
   static const Color contentE62222 = Color(0xffE62222);
   static const Color content443F4E = Color(0xff443F4E);
+  static const Color contentFF7A3B = Color(0xffFF7A3B);
 
 
   //内容影响力颜色
