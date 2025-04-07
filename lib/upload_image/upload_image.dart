@@ -9,6 +9,7 @@ import 'package:flutter_wlk_customer/utils/customer.dart';
 import 'package:flutter_wlk_customer/utils/toast_utils.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:images_picker/images_picker.dart';
 // import 'package:images_picker/images_picker.dart';
 import 'package:permission_handler/permission_handler.dart';
 
@@ -319,12 +320,12 @@ class _UploadImagesState extends State<UploadImages> {
 
   openGallery() async {
     int number = (widget.max ?? 9) - imagesList.length;
-    // List<Media>? images =
-    //     await ImagesPicker.pick(count: number, pickType: PickType.image);
+    List<Media>? images =
+        await ImagesPicker.pick(count: number, pickType: PickType.image);
     List<String> list = [];
-    List<XFile>? images = await ImagePicker().pickMultiImage(limit: number,);
-    if (images.isEmpty != true) {
-      for (var element in images) {
+    // List<XFile>? images = await ImagePicker().pickMultiImage(limit: number,);
+    if (images?.isEmpty != true) {
+      for (var element in images!) {
         String path = await saveNetworkImgGallery(
           element.path,
         );
