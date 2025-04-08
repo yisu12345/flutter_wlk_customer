@@ -308,8 +308,7 @@ class _UploadImagesState extends State<UploadImages> {
   //
   openCamera() async {
     List<Media>? images =  await ImagesPicker.openCamera(
-      pickType: PickType.video,
-      maxTime: 15,
+      pickType: PickType.image,
       maxSize: 1,
     );
 
