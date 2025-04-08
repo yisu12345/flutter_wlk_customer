@@ -219,9 +219,9 @@
     },
     {
       "name": "flutter_widget_from_html_core",
-      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/flutter_widget_from_html_core-0.15.2",
+      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/flutter_widget_from_html_core-0.16.0",
       "packageUri": "lib/",
-      "languageVersion": "2.19"
+      "languageVersion": "3.4"
     },
     {
       "name": "get",
@@ -249,9 +249,9 @@
     },
     {
       "name": "image_gallery_saver_plus",
-      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/image_gallery_saver_plus-3.0.5",
+      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/image_gallery_saver_plus-4.0.1",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.5"
     },
     {
       "name": "image_picker",
@@ -495,7 +495,7 @@
     },
     {
       "name": "provider",
-      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/provider-6.1.2",
+      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/provider-6.1.4",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -555,7 +555,7 @@
     },
     {
       "name": "shared_preferences",
-      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/shared_preferences-2.5.2",
+      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/shared_preferences-2.5.3",
       "packageUri": "lib/",
       "languageVersion": "3.5"
     },
@@ -717,9 +717,9 @@
     },
     {
       "name": "url_launcher_ios",
-      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/url_launcher_ios-6.3.2",
+      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/url_launcher_ios-6.3.3",
       "packageUri": "lib/",
-      "languageVersion": "3.3"
+      "languageVersion": "3.4"
     },
     {
       "name": "url_launcher_linux",
@@ -765,7 +765,7 @@
     },
     {
       "name": "video_player",
-      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/video_player-2.9.3",
+      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/video_player-2.9.5",
       "packageUri": "lib/",
       "languageVersion": "3.4"
     },
@@ -801,7 +801,7 @@
     },
     {
       "name": "wakelock_plus",
-      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/wakelock_plus-1.2.10",
+      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/wakelock_plus-1.2.11",
       "packageUri": "lib/",
       "languageVersion": "3.4"
     },
@@ -825,7 +825,7 @@
     },
     {
       "name": "webview_flutter_android",
-      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/webview_flutter_android-4.3.3",
+      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/webview_flutter_android-4.3.4",
       "packageUri": "lib/",
       "languageVersion": "3.6"
     },
@@ -837,7 +837,7 @@
     },
     {
       "name": "webview_flutter_wkwebview",
-      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/webview_flutter_wkwebview-3.18.4",
+      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/webview_flutter_wkwebview-3.18.5",
       "packageUri": "lib/",
       "languageVersion": "3.5"
     },
@@ -866,7 +866,7 @@
       "languageVersion": "3.5"
     }
   ],
-  "generated": "2025-04-07T09:35:22.522546Z",
+  "generated": "2025-04-08T02:36:12.916855Z",
   "generator": "pub",
   "generatorVersion": "3.6.2",
   "flutterRoot": "file:///Users/threeone/flutter",
