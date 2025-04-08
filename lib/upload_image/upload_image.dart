@@ -8,8 +8,12 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter_wlk_customer/utils/customer.dart';
 import 'package:flutter_wlk_customer/utils/toast_utils.dart';
 import 'package:get/get.dart';
-import 'package:image_picker/image_picker.dart';
+
+// import 'package:image_picker/image_picker.dart';
 import 'package:images_picker/images_picker.dart';
+
+// import 'package:image_picker/image_picker.dart';
+// import 'package:images_picker/images_picker.dart';
 // import 'package:images_picker/images_picker.dart';
 import 'package:permission_handler/permission_handler.dart';
 
@@ -303,14 +307,21 @@ class _UploadImagesState extends State<UploadImages> {
 
   //
   openCamera() async {
-    XFile? file = await ImagePicker().pickImage(
-      source: ImageSource.camera,
+    List<Media>? images =  await ImagesPicker.openCamera(
+      pickType: PickType.video,
+      maxTime: 15,
+      maxSize: 1,
     );
-    if (file == null) {
+
+    // XFile? file = await ImagePicker().pickImage(
+    //   source: ImageSource.camera,
+    // );
+    if (images?.isEmpty == true) {
       Get.back();
     } else {
-      String imgPath = await saveNetworkImg(
-        file,
+      Media? media = images?.first;
+      String imgPath = await saveNetworkImgGallery(
+        media?.path ?? '',
       );
       imagesList.add(imgPath);
       widget.chooseImages?.call(imagesList);
@@ -340,21 +351,21 @@ class _UploadImagesState extends State<UploadImages> {
   }
 
   // 保存网络图片
-  Future<String> saveNetworkImg(XFile file) async {
-    // print("file.path ===== ${file.path}");
-    String string = await UploadOss.upload(
-      file.path,
-      fileType: "jpg",
-      oSSAccessKeyId: widget.oSSAccessKeyId,
-      ossHost: widget.ossHost,
-      ossDirectory: widget.ossDirectory,
-      policy: widget.policy,
-      callback: widget.callback,
-      signature: widget.signature,
-    );
-    // print("Gallery ===string== $string");
-    return string;
-  }
+  // Future<String> saveNetworkImg(XFile file) async {
+  //   // print("file.path ===== ${file.path}");
+  //   String string = await UploadOss.upload(
+  //     file.path,
+  //     fileType: "jpg",
+  //     oSSAccessKeyId: widget.oSSAccessKeyId,
+  //     ossHost: widget.ossHost,
+  //     ossDirectory: widget.ossDirectory,
+  //     policy: widget.policy,
+  //     callback: widget.callback,
+  //     signature: widget.signature,
+  //   );
+  //   // print("Gallery ===string== $string");
+  //   return string;
+  // }
 
   // 保存网络图片
   Future<String> saveNetworkImgGallery(String path) async {
