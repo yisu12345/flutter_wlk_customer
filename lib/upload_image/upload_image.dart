@@ -202,13 +202,17 @@ class _UploadImagesState extends State<UploadImages> {
             max: widget.max,
           );
         } else {
-          bool b = await requestPermission(context);
-          if (b == true) {
-            await chooseCamera(
-              context: context,
-              max: widget.max,
-            );
-          }
+          await chooseCamera(
+            context: context,
+            max: widget.max,
+          );
+          // bool b = await requestPermission(context);
+          // if (b == true) {
+          //   await chooseCamera(
+          //     context: context,
+          //     max: widget.max,
+          //   );
+          // }
         }
       },
       child: cellWidget(
