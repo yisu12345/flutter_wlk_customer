@@ -34,20 +34,31 @@ class UploadImagesTool {
         chooseImages: (list) => chooseImagesTap?.call(list),
       );
     } else {
-      bool b = await requestPermission(context);
-      if (b == true) {
-        await chooseCamera(
-          context: context,
-          max: max ?? 9,
-          oSSAccessKeyId: oSSAccessKeyId ?? '',
-          ossHost: ossHost ?? '',
-          ossDirectory: ossDirectory ?? '',
-          policy: policy ?? '',
-          callback: callback ?? '',
-          signature: signature ?? '',
-          chooseImages: (list) => chooseImagesTap?.call(list),
-        );
-      }
+      // bool b = await requestPermission(context);
+      // if (b == true) {
+      //   await chooseCamera(
+      //     context: context,
+      //     max: max ?? 9,
+      //     oSSAccessKeyId: oSSAccessKeyId ?? '',
+      //     ossHost: ossHost ?? '',
+      //     ossDirectory: ossDirectory ?? '',
+      //     policy: policy ?? '',
+      //     callback: callback ?? '',
+      //     signature: signature ?? '',
+      //     chooseImages: (list) => chooseImagesTap?.call(list),
+      //   );
+      // }
+      await chooseCamera(
+        context: context,
+        max: max ?? 9,
+        oSSAccessKeyId: oSSAccessKeyId ?? '',
+        ossHost: ossHost ?? '',
+        ossDirectory: ossDirectory ?? '',
+        policy: policy ?? '',
+        callback: callback ?? '',
+        signature: signature ?? '',
+        chooseImages: (list) => chooseImagesTap?.call(list),
+      );
     }
   }
 
