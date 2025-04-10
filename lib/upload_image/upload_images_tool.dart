@@ -81,9 +81,9 @@ class UploadImagesTool {
                 CupertinoDialogAction(
                   child: const Text('确定'),
                   onPressed: () {
+                    openAppSettings();
                     Navigator.pop(ctx);
                     // 打开手机上该app权限的页面
-                    openAppSettings();
                   },
                 ),
               ],
