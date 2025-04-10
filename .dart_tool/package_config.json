@@ -302,12 +302,6 @@
       "languageVersion": "2.19"
     },
     {
-      "name": "images_picker",
-      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/images_picker-1.2.11",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
-    },
-    {
       "name": "intl",
       "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/intl-0.20.2",
       "packageUri": "lib/",
@@ -866,7 +860,7 @@
       "languageVersion": "3.5"
     }
   ],
-  "generated": "2025-04-08T02:36:12.916855Z",
+  "generated": "2025-04-10T03:48:26.813568Z",
   "generator": "pub",
   "generatorVersion": "3.6.2",
   "flutterRoot": "file:///Users/threeone/flutter",
