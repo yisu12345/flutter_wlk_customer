@@ -51,13 +51,14 @@ class CustomerAction {
       ToastUtils.showToast(msg: "暂无文件");
     } else {
       if (filePath.contains("http")) {
-        showDialog(
-            context: context,
-            builder: (BuildContext ctx) {
-              return CustomerPDFPage(
-                filePath: filePath,
-              );
-            });
+        // showDialog(
+        //     context: context,
+        //     builder: (BuildContext ctx) {
+        //
+        //       // return CustomerPDFPage(
+        //       //   filePath: filePath,
+        //       // );
+        //     });
       } else {
         ToastUtils.showToast(msg: "地址无效");
       }
