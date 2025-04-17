@@ -5,6 +5,7 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_wlk_customer/utils/custom_dialog.dart';
 import 'package:get/get.dart';
+
 // import 'package:get/get.dart';
 
 class ToastUtils {
@@ -195,5 +196,23 @@ class ToastUtils {
         },
       ),
     );
+  }
+  ///错误信息弹窗
+  static showExceptionToast({String? title, String? msg}) {
+    _cancelToast();
+    return Get.snackbar(
+      title ?? '错误信息',
+      msg ?? '错误信息内容',
+      snackPosition: SnackPosition.BOTTOM,
+      colorText: Colors.white,
+      backgroundColor: Colors.red[800],
+      margin: const EdgeInsets.only(bottom: 10, left: 10, right: 10),
+      borderRadius: 4,
+      duration: const Duration(seconds: 3),
+    );
+  }
+  ///取消弹窗
+  static _cancelToast() {
+    // Toast.dismissAllToast();
   }
 }
