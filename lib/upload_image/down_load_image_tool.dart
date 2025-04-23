@@ -13,13 +13,17 @@ class DownLoadImageTool {
   //申请存本地相册权限
   static Future<bool> getPormiation() async {
     if (Platform.isIOS) {
-      var status = await Permission.photos.request();
+      var status = await Permission.photos.status;
+      
       if (status.isDenied) {
-        Map<Permission, PermissionStatus> statuses = await [
-          Permission.photos,
-        ].request();
-        // saveImage(globalKey);
+        status = await Permission.photos.request();
       }
+      
+      if (status.isPermanentlyDenied) {
+        ToastUtils.showToast(msg: '请在设置中开启相册权限');
+        return false;
+      }
+      
       return status.isGranted;
     } else {
       var status = await Permission.storage.status;
