@@ -47,7 +47,7 @@ class DownLoadImageTool {
     var status = await Permission.photos.status;
     if (permition) {
       if (Platform.isIOS) {
-        if (status.isGranted) {
+        if (status.isDenied) {
           var result = imageRequest(
             imageUrl: imageUrl,
             isHideLoading: isHideLoading,
