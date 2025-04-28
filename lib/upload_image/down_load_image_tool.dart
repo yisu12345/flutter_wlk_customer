@@ -21,7 +21,7 @@ class DownLoadImageTool {
       
       if (status.isPermanentlyDenied) {
         ToastUtils.showToast(msg: '请在设置中开启相册权限');
-        return false;
+        return true;
       }
       
       return status.isGranted;
