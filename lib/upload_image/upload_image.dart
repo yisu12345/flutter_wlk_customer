@@ -310,7 +310,7 @@ class _UploadImagesState extends State<UploadImages> {
       source: ImageSource.camera,
     );
     if (file == null) {
-      Get.back();
+      // Get.back();
     } else {
       String imgPath = await saveNetworkImg(
         file,
