@@ -56,6 +56,7 @@ class UploadOss {
     );
     Dio dio = Dio();
     dio.options.responseType = ResponseType.plain;
+    dio.options.method = 'put';
     dio.options.contentType = "multipart/form-data;image/jpg";
     try {
       // 发送请求
