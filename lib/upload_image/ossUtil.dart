@@ -56,13 +56,14 @@ class UploadOss {
     );
     Dio dio = Dio();
     dio.options.responseType = ResponseType.plain;
-    dio.options.contentType = "multipart/form-data";
+    dio.options.contentType = "multipart/form-data;image/jpg";
     try {
       // 发送请求
       Response response = await dio.post(
         ossHost,
         data: formdata,
       );
+      print("response ===== $response");
       EasyLoading.dismiss();
       // 成功后返回文件访问路径
       return "$ossHost/$ossDirectory$pathName";
