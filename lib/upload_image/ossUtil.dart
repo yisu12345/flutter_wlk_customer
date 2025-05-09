@@ -56,7 +56,7 @@ class UploadOss {
     );
     Dio dio = Dio();
     dio.options.responseType = ResponseType.plain;
-    // dio.options.contentType = "application/xml";
+    dio.options.contentType = "multipart/form-data";
     try {
       // 发送请求
       Response response = await dio.post(
