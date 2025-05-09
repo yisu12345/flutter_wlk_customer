@@ -56,13 +56,14 @@ class UploadOss {
     );
     Dio dio = Dio();
     dio.options.responseType = ResponseType.plain;
-    dio.options.method = 'put';
-    dio.options.contentType = "multipart/form-data;image/jpg";
+    // dio.options.method = 'put';
+    // dio.options.contentType = "multipart/form-data;image/jpg";
     try {
       // 发送请求
-      Response response = await dio.put(
+      Response response = await dio.post(
         ossHost,
         data: formdata,
+        options: Options(contentType: "multipart/form-data;image/jpg"),
       );
       print("response ===== $response");
       EasyLoading.dismiss();
