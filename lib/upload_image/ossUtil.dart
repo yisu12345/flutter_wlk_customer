@@ -11,12 +11,12 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_wlk_customer/utils/toast_utils.dart';
 import 'package:image_gallery_saver_plus/image_gallery_saver_plus.dart';
+
 // import 'package:image_gallery_saver/image_gallery_saver.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 class UploadOss {
-
   /*
    * @params file 要上传的文件对象
    * @params rootDir 阿里云oss设置的根目录文件夹名字
@@ -63,7 +63,10 @@ class UploadOss {
       Response response = await dio.post(
         ossHost,
         data: formdata,
-        options: Options(contentType: "multipart/form-data;image/jpg"),
+        options: Options(
+          contentType: "multipart/form-data;image/jpg",
+          headers: {'Content-Typ': 'multipart/form-data;image/jp'},
+        ),
       );
       print("response ===== $response");
       EasyLoading.dismiss();
@@ -97,7 +100,6 @@ class UploadOss {
     DateTime now = DateTime.now();
     return "${now.year}${now.month}${now.day}";
   }
-
 }
 
 class UploadWidgetOss {
@@ -249,7 +251,8 @@ class UploadWidgetOss {
         if (status.isGranted) {
           print("Android已授权");
           Uint8List images = byteData!.buffer.asUint8List();
-          final result = await ImageGallerySaverPlus.saveImage(images, quality: 60);
+          final result =
+              await ImageGallerySaverPlus.saveImage(images, quality: 60);
           if (result != null) {
             // EasyLoading.showToast("保存成功");
             ToastUtils.showToast(msg: "保存成功");
