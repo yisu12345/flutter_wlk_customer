@@ -60,7 +60,7 @@ class UploadOss {
     dio.options.contentType = "multipart/form-data;image/jpg";
     try {
       // 发送请求
-      Response response = await dio.post(
+      Response response = await dio.put(
         ossHost,
         data: formdata,
       );
