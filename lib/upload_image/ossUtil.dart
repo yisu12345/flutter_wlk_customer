@@ -56,7 +56,7 @@ class UploadOss {
     );
     Dio dio = Dio();
     dio.options.responseType = ResponseType.plain;
-    dio.options.contentType = "application/xml";
+    // dio.options.contentType = "application/xml";
     try {
       // 发送请求
       Response response = await dio.post(
@@ -65,7 +65,7 @@ class UploadOss {
       );
       EasyLoading.dismiss();
       // 成功后返回文件访问路径
-      return "$ossHost/$ossDirectory/$pathName";
+      return "$ossHost/$ossDirectory$pathName";
     } on DioError catch (e) {
       EasyLoading.dismiss();
       print("e.message ===== ${e.message}");
