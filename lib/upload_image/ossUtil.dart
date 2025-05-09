@@ -63,7 +63,8 @@ class UploadOss {
       Response response = await dio.post(
         ossHost,
         data: formdata,
-        options: Options(contentType: "multipart/form-data;image/jpg"),
+        options: Options(contentType: "multipart/form-data;image/jpg",
+                        headers: {'Content-Type': 'multipart/form-data;image/jpg'},),
       );
       print("response ===== $response");
       EasyLoading.dismiss();
