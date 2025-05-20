@@ -5,7 +5,7 @@ import 'dart:ui' as ui;
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:perfect_volume_control/perfect_volume_control.dart';
+// import 'package:perfect_volume_control/perfect_volume_control.dart';
 import 'package:provider/provider.dart';
 import 'package:screen_brightness/screen_brightness.dart';
 import 'package:video_player/video_player.dart';
@@ -120,8 +120,8 @@ class _CupertinoControlsState extends State<CupertinoControls>
         },
         onVerticalDragStart: (details) async {
           volumeStart = details.localPosition.dy;
-          PerfectVolumeControl.getVolume();
-          volume = await PerfectVolumeControl.volume;
+          // PerfectVolumeControl.getVolume();
+          // volume = await PerfectVolumeControl.volume;
           _brightness = await ScreenBrightness().current;
           print("volumevolume---volume$volume---_brightness $_brightness");
         },
@@ -161,7 +161,7 @@ class _CupertinoControlsState extends State<CupertinoControls>
               }
               print("====== 右边向上滑   $volume");
             }
-            PerfectVolumeControl.setVolume(volume);
+            // PerfectVolumeControl.setVolume(volume);
           }
 
           // print(
