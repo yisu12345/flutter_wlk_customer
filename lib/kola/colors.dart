@@ -26,6 +26,8 @@ class JHYJColors {
   static const Color contentFF7A3B = Color(0xffFF7A3B);
   static const Color content4572E2 = Color(0xff4572E2);
 
+  static const Color content56C1D2 = Color(0xff56C1D2);
+
 
 
   //内容影响力颜色
