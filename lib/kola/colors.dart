@@ -25,7 +25,10 @@ class JHYJColors {
   static const Color content443F4E = Color(0xff443F4E);
   static const Color contentFF7A3B = Color(0xffFF7A3B);
   static const Color content4572E2 = Color(0xff4572E2);
-
+  static const Color contentF4F5FF = Color(0xffF4F5FF);
+  static const Color content46A5FF = Color(0xff46A5FF);
+  static const Color contentE0D0EA = Color(0xffE0D0EA);
+  static const Color contentD5F3F4 = Color(0xffD5F3F4);
   static const Color content56C1D2 = Color(0xff56C1D2);
 
 
