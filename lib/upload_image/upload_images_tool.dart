@@ -245,7 +245,7 @@ class UploadImagesTool {
     bool? isVideo,
   }) async {
     if (isVideo == true) {
-      XFile? video = await ImagePicker().pickMedia();
+      XFile? video = await ImagePicker().pickVideo(source: ImageSource.gallery);
       String path = await saveNetworkImgGallery(
         video?.path ?? '',
         fileType: 'mp4',
