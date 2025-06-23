@@ -33,6 +33,7 @@ class UploadImagesTool {
         policy: policy ?? '',
         callback: callback ?? '',
         signature: signature ?? '',
+        isVideo: isVideo,
         chooseImages: (list) => chooseImagesTap?.call(list),
       );
     } else {
@@ -53,6 +54,7 @@ class UploadImagesTool {
       await chooseCamera(
         context: context,
         max: max ?? 9,
+        isVideo: isVideo,
         oSSAccessKeyId: oSSAccessKeyId ?? '',
         ossHost: ossHost ?? '',
         ossDirectory: ossDirectory ?? '',
@@ -254,6 +256,7 @@ class UploadImagesTool {
         callback: callback ?? '',
         signature: signature ?? '',
       );
+      chooseImages?.call([path]);
       print('video path ============ $path');
     } else {
       List<XFile>? images = await ImagePicker().pickMultiImage();
