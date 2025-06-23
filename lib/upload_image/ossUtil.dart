@@ -48,7 +48,10 @@ class UploadOss {
       'key': '$ossDirectory$pathName',
       //上传后的文件名
       'success_action_status': '200',
-      'file': MultipartFile.fromFileSync(path,contentType: DioMediaType("image", "jpg")),
+      'file': MultipartFile.fromFileSync(
+        path,
+        contentType: fileType == 'mp4' ? null : DioMediaType("image", "jpg"),
+      ),
     });
     await EasyLoading.show(
       // status: 'loading...',

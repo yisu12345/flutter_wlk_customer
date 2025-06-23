@@ -5,6 +5,7 @@ import 'package:flutter_wlk_customer/upload_image/ossUtil.dart';
 import 'package:flutter_wlk_customer/utils/toast_utils.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
+
 // import 'package:images_picker/images_picker.dart';
 // import 'package:images_picker/images_picker.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -20,6 +21,7 @@ class UploadImagesTool {
     required BuildContext context,
     Function? chooseImagesTap,
     int? max,
+    bool? isVideo,
   }) async {
     if (Platform.isIOS) {
       await chooseCamera(
@@ -117,55 +119,86 @@ class UploadImagesTool {
     String? ossDirectory,
     String? ossHost,
     Function? chooseImages,
+    bool? isVideo,
   }) async {
     //
     showCupertinoModalPopup(
         context: context,
         builder: (BuildContext ctx) {
-          return CupertinoActionSheet(
-            title: const Text('上传图片'),
-            message: Text('请选择上传方式\n相册最多${max ?? 9}张'),
-            actions: <Widget>[
-              CupertinoActionSheetAction(
-                child: const Text('拍照上传'),
-                onPressed: () {
-                  openCamera(
-                    oSSAccessKeyId: oSSAccessKeyId ?? '',
-                    ossHost: ossHost ?? '',
-                    ossDirectory: ossDirectory ?? '',
-                    policy: policy ?? '',
-                    callback: callback ?? '',
-                    signature: signature ?? '',
-                    chooseImages: (list) => chooseImages?.call(list),
-                  );
-                  Get.back();
-                },
-              ),
-              CupertinoActionSheetAction(
-                child: const Text('相册'),
-                onPressed: () {
-                  openGallery(
-                    max: max,
-                    oSSAccessKeyId: oSSAccessKeyId ?? '',
-                    ossHost: ossHost ?? '',
-                    ossDirectory: ossDirectory ?? '',
-                    policy: policy ?? '',
-                    callback: callback ?? '',
-                    signature: signature ?? '',
-                    chooseImages: (list) => chooseImages?.call(list),
-                  );
-                  Get.back();
-                },
-              ),
-            ],
-            cancelButton: CupertinoActionSheetAction(
-              isDefaultAction: true,
-              child: const Text('取消'),
-              onPressed: () {
-                Get.back();
-              },
-            ),
-          );
+          return isVideo == true
+              ? CupertinoActionSheet(
+                  title: const Text('上传视频'),
+                  message: Text('请选择视频'),
+                  actions: <Widget>[
+                    CupertinoActionSheetAction(
+                      child: const Text('视频库'),
+                      onPressed: () {
+                        openGallery(
+                          max: max,
+                          oSSAccessKeyId: oSSAccessKeyId ?? '',
+                          ossHost: ossHost ?? '',
+                          ossDirectory: ossDirectory ?? '',
+                          policy: policy ?? '',
+                          callback: callback ?? '',
+                          signature: signature ?? '',
+                          chooseImages: (list) => chooseImages?.call(list),
+                        );
+                        Get.back();
+                      },
+                    ),
+                  ],
+                  cancelButton: CupertinoActionSheetAction(
+                    isDefaultAction: true,
+                    child: const Text('取消'),
+                    onPressed: () {
+                      Get.back();
+                    },
+                  ),
+                )
+              : CupertinoActionSheet(
+                  title: const Text('上传图片'),
+                  message: Text('请选择上传方式\n相册最多${max ?? 9}张'),
+                  actions: <Widget>[
+                    CupertinoActionSheetAction(
+                      child: const Text('拍照上传'),
+                      onPressed: () {
+                        openCamera(
+                          oSSAccessKeyId: oSSAccessKeyId ?? '',
+                          ossHost: ossHost ?? '',
+                          ossDirectory: ossDirectory ?? '',
+                          policy: policy ?? '',
+                          callback: callback ?? '',
+                          signature: signature ?? '',
+                          chooseImages: (list) => chooseImages?.call(list),
+                        );
+                        Get.back();
+                      },
+                    ),
+                    CupertinoActionSheetAction(
+                      child: const Text('相册'),
+                      onPressed: () {
+                        openGallery(
+                          max: max,
+                          oSSAccessKeyId: oSSAccessKeyId ?? '',
+                          ossHost: ossHost ?? '',
+                          ossDirectory: ossDirectory ?? '',
+                          policy: policy ?? '',
+                          callback: callback ?? '',
+                          signature: signature ?? '',
+                          chooseImages: (list) => chooseImages?.call(list),
+                        );
+                        Get.back();
+                      },
+                    ),
+                  ],
+                  cancelButton: CupertinoActionSheetAction(
+                    isDefaultAction: true,
+                    child: const Text('取消'),
+                    onPressed: () {
+                      Get.back();
+                    },
+                  ),
+                );
         });
   }
 
@@ -207,16 +240,13 @@ class UploadImagesTool {
     String? ossDirectory,
     String? ossHost,
     int? max,
+    bool? isVideo,
   }) async {
-    // List<Media>? images = await ImagesPicker.pick(
-    //   count: max ?? 9,
-    //   pickType: PickType.image,
-    // );
-    List<XFile>? images = await ImagePicker().pickMultiImage();
-    List<String> list = [];
-    for (var element in images) {
+    if (isVideo == true) {
+      XFile? video = await ImagePicker().pickVideo(source: ImageSource.gallery);
       String path = await saveNetworkImgGallery(
-        element.path,
+        video?.path ?? '',
+        fileType: 'mp4',
         oSSAccessKeyId: oSSAccessKeyId ?? '',
         ossHost: ossHost ?? '',
         ossDirectory: ossDirectory ?? '',
@@ -224,10 +254,25 @@ class UploadImagesTool {
         callback: callback ?? '',
         signature: signature ?? '',
       );
-      list.add(path);
+      print('video path ============ $path');
+    } else {
+      List<XFile>? images = await ImagePicker().pickMultiImage();
+      List<String> list = [];
+      for (var element in images) {
+        String path = await saveNetworkImgGallery(
+          element.path,
+          oSSAccessKeyId: oSSAccessKeyId ?? '',
+          ossHost: ossHost ?? '',
+          ossDirectory: ossDirectory ?? '',
+          policy: policy ?? '',
+          callback: callback ?? '',
+          signature: signature ?? '',
+        );
+        list.add(path);
+      }
+      chooseImages?.call(list);
     }
-    chooseImages?.call(list);
-    }
+  }
 
   // 保存网络图片
   static Future<String> saveNetworkImg(
@@ -257,6 +302,7 @@ class UploadImagesTool {
   // 保存网络图片
   static Future<String> saveNetworkImgGallery(
     String path, {
+    String? fileType,
     String? oSSAccessKeyId,
     String? policy,
     String? callback,
@@ -266,7 +312,7 @@ class UploadImagesTool {
   }) async {
     String string = await UploadOss.upload(
       path,
-      fileType: "jpg",
+      fileType: fileType ?? "jpg",
       oSSAccessKeyId: oSSAccessKeyId ?? '',
       ossHost: ossHost ?? '',
       ossDirectory: ossDirectory ?? '',
