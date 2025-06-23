@@ -51,6 +51,7 @@ class UploadOss {
       'file': MultipartFile.fromFileSync(
         path,
         contentType: fileType == 'mp4' ? null : DioMediaType("image", "jpg"),
+        filename: "${getRandom(12)}.$fileType",
       ),
     });
     await EasyLoading.show(

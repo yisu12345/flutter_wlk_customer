@@ -137,6 +137,7 @@ class UploadImagesTool {
                       onPressed: () {
                         openGallery(
                           max: max,
+                          isVideo: isVideo,
                           oSSAccessKeyId: oSSAccessKeyId ?? '',
                           ossHost: ossHost ?? '',
                           ossDirectory: ossDirectory ?? '',
