@@ -88,17 +88,17 @@ class CustomerAction {
   }
 
   ///打开网页
-  static Future<void> openWebview({
-    required BuildContext context,
-    required String url,
-  }) async {
-    showDialog(
-      context: context,
-      builder: (BuildContext ctx) {
-        return CustomerWebView(url: url);
-      },
-    );
-  }
+  // static Future<void> openWebview({
+  //   required BuildContext context,
+  //   required String url,
+  // }) async {
+  //   showDialog(
+  //     context: context,
+  //     builder: (BuildContext ctx) {
+  //       return CustomerWebView(url: url);
+  //     },
+  //   );
+  // }
 
   static Future<void> openTypeFile({
     required OpenType type,
