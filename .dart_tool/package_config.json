@@ -747,7 +747,7 @@
     },
     {
       "name": "webview_flutter_android",
-      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/webview_flutter_android-4.8.2",
+      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/webview_flutter_android-4.9.0",
       "packageUri": "lib/",
       "languageVersion": "3.6"
     },
@@ -759,7 +759,7 @@
     },
     {
       "name": "webview_flutter_wkwebview",
-      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/webview_flutter_wkwebview-3.22.1",
+      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/webview_flutter_wkwebview-3.23.0",
       "packageUri": "lib/",
       "languageVersion": "3.6"
     },
@@ -788,7 +788,7 @@
       "languageVersion": "3.5"
     }
   ],
-  "generated": "2025-08-05T06:34:07.445728Z",
+  "generated": "2025-08-07T03:40:20.129470Z",
   "generator": "pub",
   "generatorVersion": "3.6.2",
   "flutterRoot": "file:///Users/threeone/flutter",
