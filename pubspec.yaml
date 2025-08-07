@@ -36,7 +36,7 @@ dependencies:
 #  wakelock: ^0.6.2
   wakelock_plus: ^1.2.5
   url_launcher: ^6.1.10
-  webview_flutter: ^4.13.0
+  flutter_inappwebview: ^6.1.5
 
 
 dev_dependencies:
