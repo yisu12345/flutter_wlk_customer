@@ -37,6 +37,7 @@ dependencies:
   wakelock_plus: ^1.2.5
   url_launcher: ^6.1.10
   flutter_inappwebview: ^6.1.5
+  device_info_plus: ^11.3.0
 
 
 dev_dependencies:

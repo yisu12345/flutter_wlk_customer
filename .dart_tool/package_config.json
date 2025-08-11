@@ -80,6 +80,18 @@
       "languageVersion": "3.3"
     },
     {
+      "name": "device_info_plus",
+      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/device_info_plus-11.3.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.4"
+    },
+    {
+      "name": "device_info_plus_platform_interface",
+      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/device_info_plus_platform_interface-7.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
       "name": "dio",
       "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/dio-5.8.0+1",
       "packageUri": "lib/",
@@ -794,6 +806,12 @@
       "languageVersion": "3.5"
     },
     {
+      "name": "win32_registry",
+      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/win32_registry-1.1.5",
+      "packageUri": "lib/",
+      "languageVersion": "3.4"
+    },
+    {
       "name": "xdg_directories",
       "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/xdg_directories-1.1.0",
       "packageUri": "lib/",
@@ -812,7 +830,7 @@
       "languageVersion": "3.5"
     }
   ],
-  "generated": "2025-08-07T06:01:16.108722Z",
+  "generated": "2025-08-11T06:37:07.227910Z",
   "generator": "pub",
   "generatorVersion": "3.6.2",
   "flutterRoot": "file:///Users/threeone/flutter",

@@ -50,6 +50,14 @@ decimal
 3.3
 file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/decimal-3.2.4/
 file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/decimal-3.2.4/lib/
+device_info_plus
+3.4
+file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/device_info_plus-11.3.0/
+file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/device_info_plus-11.3.0/lib/
+device_info_plus_platform_interface
+2.18
+file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/device_info_plus_platform_interface-7.0.2/
+file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/device_info_plus_platform_interface-7.0.2/lib/
 dio
 2.18
 file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/dio-5.8.0+1/
@@ -510,6 +518,10 @@ win32
 3.5
 file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/win32-5.10.1/
 file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/win32-5.10.1/lib/
+win32_registry
+3.4
+file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/win32_registry-1.1.5/
+file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/win32_registry-1.1.5/lib/
 xdg_directories
 3.3
 file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/xdg_directories-1.1.0/
