@@ -22,48 +22,21 @@ class UploadImagesTool {
     Function? chooseImagesTap,
     int? max,
     bool? isVideo,
+    Widget? isAddOtherWidget,
   }) async {
-    if (Platform.isIOS) {
-      await chooseCamera(
-        context: context,
-        max: max ?? 9,
-        oSSAccessKeyId: oSSAccessKeyId ?? '',
-        ossHost: ossHost ?? '',
-        ossDirectory: ossDirectory ?? '',
-        policy: policy ?? '',
-        callback: callback ?? '',
-        signature: signature ?? '',
-        isVideo: isVideo,
-        chooseImages: (list) => chooseImagesTap?.call(list),
-      );
-    } else {
-      // bool b = await requestPermission(context);
-      // if (b == true) {
-      //   await chooseCamera(
-      //     context: context,
-      //     max: max ?? 9,
-      //     oSSAccessKeyId: oSSAccessKeyId ?? '',
-      //     ossHost: ossHost ?? '',
-      //     ossDirectory: ossDirectory ?? '',
-      //     policy: policy ?? '',
-      //     callback: callback ?? '',
-      //     signature: signature ?? '',
-      //     chooseImages: (list) => chooseImagesTap?.call(list),
-      //   );
-      // }
-      await chooseCamera(
-        context: context,
-        max: max ?? 9,
-        isVideo: isVideo,
-        oSSAccessKeyId: oSSAccessKeyId ?? '',
-        ossHost: ossHost ?? '',
-        ossDirectory: ossDirectory ?? '',
-        policy: policy ?? '',
-        callback: callback ?? '',
-        signature: signature ?? '',
-        chooseImages: (list) => chooseImagesTap?.call(list),
-      );
-    }
+    await chooseCamera(
+      context: context,
+      max: max ?? 9,
+      oSSAccessKeyId: oSSAccessKeyId ?? '',
+      ossHost: ossHost ?? '',
+      ossDirectory: ossDirectory ?? '',
+      policy: policy ?? '',
+      callback: callback ?? '',
+      signature: signature ?? '',
+      isVideo: isVideo,
+      isAddOtherWidget: isAddOtherWidget,
+      chooseImages: (list) => chooseImagesTap?.call(list),
+    );
   }
 
   /// 动态申请权限，需要区分android和ios，很多时候它两配置权限时各自的名称不同
@@ -122,6 +95,7 @@ class UploadImagesTool {
     String? ossHost,
     Function? chooseImages,
     bool? isVideo,
+    Widget? isAddOtherWidget,
   }) async {
     //
     showCupertinoModalPopup(
@@ -161,39 +135,78 @@ class UploadImagesTool {
               : CupertinoActionSheet(
                   title: const Text('上传图片'),
                   message: Text('请选择上传方式\n相册最多${max ?? 9}张'),
-                  actions: <Widget>[
-                    CupertinoActionSheetAction(
-                      child: const Text('拍照上传'),
-                      onPressed: () {
-                        openCamera(
-                          oSSAccessKeyId: oSSAccessKeyId ?? '',
-                          ossHost: ossHost ?? '',
-                          ossDirectory: ossDirectory ?? '',
-                          policy: policy ?? '',
-                          callback: callback ?? '',
-                          signature: signature ?? '',
-                          chooseImages: (list) => chooseImages?.call(list),
-                        );
-                        Get.back();
-                      },
-                    ),
-                    CupertinoActionSheetAction(
-                      child: const Text('相册'),
-                      onPressed: () {
-                        openGallery(
-                          max: max,
-                          oSSAccessKeyId: oSSAccessKeyId ?? '',
-                          ossHost: ossHost ?? '',
-                          ossDirectory: ossDirectory ?? '',
-                          policy: policy ?? '',
-                          callback: callback ?? '',
-                          signature: signature ?? '',
-                          chooseImages: (list) => chooseImages?.call(list),
-                        );
-                        Get.back();
-                      },
-                    ),
-                  ],
+                  actions: isAddOtherWidget != null
+                      ? <Widget>[
+                          isAddOtherWidget,
+                          CupertinoActionSheetAction(
+                            child: const Text('拍照上传'),
+                            onPressed: () {
+                              openCamera(
+                                oSSAccessKeyId: oSSAccessKeyId ?? '',
+                                ossHost: ossHost ?? '',
+                                ossDirectory: ossDirectory ?? '',
+                                policy: policy ?? '',
+                                callback: callback ?? '',
+                                signature: signature ?? '',
+                                chooseImages: (list) =>
+                                    chooseImages?.call(list),
+                              );
+                              Get.back();
+                            },
+                          ),
+                          CupertinoActionSheetAction(
+                            child: const Text('相册'),
+                            onPressed: () {
+                              openGallery(
+                                max: max,
+                                oSSAccessKeyId: oSSAccessKeyId ?? '',
+                                ossHost: ossHost ?? '',
+                                ossDirectory: ossDirectory ?? '',
+                                policy: policy ?? '',
+                                callback: callback ?? '',
+                                signature: signature ?? '',
+                                chooseImages: (list) =>
+                                    chooseImages?.call(list),
+                              );
+                              Get.back();
+                            },
+                          ),
+                        ]
+                      : <Widget>[
+                          CupertinoActionSheetAction(
+                            child: const Text('拍照上传'),
+                            onPressed: () {
+                              openCamera(
+                                oSSAccessKeyId: oSSAccessKeyId ?? '',
+                                ossHost: ossHost ?? '',
+                                ossDirectory: ossDirectory ?? '',
+                                policy: policy ?? '',
+                                callback: callback ?? '',
+                                signature: signature ?? '',
+                                chooseImages: (list) =>
+                                    chooseImages?.call(list),
+                              );
+                              Get.back();
+                            },
+                          ),
+                          CupertinoActionSheetAction(
+                            child: const Text('相册'),
+                            onPressed: () {
+                              openGallery(
+                                max: max,
+                                oSSAccessKeyId: oSSAccessKeyId ?? '',
+                                ossHost: ossHost ?? '',
+                                ossDirectory: ossDirectory ?? '',
+                                policy: policy ?? '',
+                                callback: callback ?? '',
+                                signature: signature ?? '',
+                                chooseImages: (list) =>
+                                    chooseImages?.call(list),
+                              );
+                              Get.back();
+                            },
+                          ),
+                        ],
                   cancelButton: CupertinoActionSheetAction(
                     isDefaultAction: true,
                     child: const Text('取消'),
