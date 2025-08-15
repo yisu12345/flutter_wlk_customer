@@ -26,6 +26,11 @@ class DownLoadImageTool {
         // 打开应用设置，让用户手动启用权限
         await openAppSettings();
       }
+
+      if (status.isDenied) {
+        // 打开应用设置，让用户手动启用权限
+        await openAppSettings();
+      }
     }
 
     return status.isGranted;
