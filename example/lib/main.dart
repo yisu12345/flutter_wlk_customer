@@ -3,6 +3,7 @@ import 'package:example/common/http/http_unit.dart';
 import 'package:example/reshresh/resh_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:flutter_wlk_customer/utils/customer.dart';
 import 'package:flutter_wlk_customer/utils/file/customer_file.dart';
 
 void main() {
@@ -139,6 +140,9 @@ class _MyHomePageState extends State<MyHomePage> {
           // wireframe for each widget.
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+
+            CustomerHtmlWidget(html: 'html'),
+
             const Text(
               'You have pushed the button this many times:',
             ),

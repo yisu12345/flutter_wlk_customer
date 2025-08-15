@@ -37,6 +37,9 @@ class DownLoadImageTool {
       // 对于Android 13及以上版本
       if (await DeviceInfoPlugin().androidInfo.then((info) => info.version.sdkInt) >= 33) {
         var status = await Permission.photos.request();
+        if(status == PermissionStatus.denied){
+          await requestPhotoPermission();
+        }
         return status.isGranted;
       } else {
         // 对于Android 13以下版本

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_widget_from_html_core/flutter_widget_from_html_core.dart';
+// import 'package:flutter_widget_from_html_core/flutter_widget_from_html_core.dart';
 import 'package:transparent_image/transparent_image.dart';
 
 
@@ -216,14 +217,40 @@ class CustomerHtmlWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return HtmlWidget(
-      html,
-      textStyle: const TextStyle(
-        letterSpacing: 1.5,
-      ),
-      onTapUrl: (url) {
-        return onTap?.call(url);
+    return Html(
+      data: """
+        <h1>Hello, World!</h1>
+        <p><span style="font-style:italic;">flutter_html</span> supports a variety of HTML and CSS tags and attributes.</p>
+        <p>Over a hundred static tags are supported out of the box.</p>
+        <p>Or you can even define your own using an <code>Extension</code>: <flutter></flutter></p>
+        <p>Its easy to add custom styles to your Html as well using the <code>Style</code> class:</p>
+        <p class="fancy">Here's a fancy &lt;p&gt; element!</p>
+        """,
+      extensions: [
+        TagExtension(
+          tagsToExtend: {"flutter"},
+          child: const FlutterLogo(),
+        ),
+      ],
+      style: {
+        "p.fancy": Style(
+          textAlign: TextAlign.center,
+          // padding:  EdgeInsets.all(),
+          backgroundColor: Colors.grey,
+          margin: Margins(left: Margin(50, Unit.px), right: Margin.auto()),
+          width: Width(300, Unit.px),
+          fontWeight: FontWeight.bold,
+        ),
       },
     );
+    // return Html(
+    //   data:  html,
+    //   textStyle: const TextStyle(
+    //     letterSpacing: 1.5,
+    //   ),
+    //   onTapUrl: (url) {
+    //     return onTap?.call(url);
+    //   },
+    // );
   }
 }
