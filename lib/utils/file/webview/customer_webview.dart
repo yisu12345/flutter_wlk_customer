@@ -42,8 +42,7 @@ class _CustomerWebViewState extends State<CustomerWebView> {
   Widget build(BuildContext context) {
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
         overlays: [SystemUiOverlay.bottom]);
-    return SafeArea(
-        child: Stack(
+    return  Stack(
       alignment: Alignment.topLeft,
       children: [
         InAppWebView(
@@ -145,6 +144,6 @@ class _CustomerWebViewState extends State<CustomerWebView> {
           ),
         )
       ],
-    ));
+    );
   }
 }
