@@ -9,8 +9,13 @@ import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 
 class CustomerWebView extends StatefulWidget {
   final String url;
+  final bool? hideBack;
 
-  const CustomerWebView({super.key, required this.url});
+  const CustomerWebView({
+    super.key,
+    required this.url,
+    this.hideBack,
+  });
 
   @override
   State<CustomerWebView> createState() => _CustomerWebViewState();
@@ -44,8 +49,7 @@ class _CustomerWebViewState extends State<CustomerWebView> {
         InAppWebView(
           key: webViewKey,
           // webViewEnvironment: webViewEnvironment,
-          initialUrlRequest:
-          URLRequest(url: WebUri(widget.url)),
+          initialUrlRequest: URLRequest(url: WebUri(widget.url)),
           // initialUrlRequest:
           // URLRequest(url: WebUri(Uri.base.toString().replaceFirst("/#/", "/") + 'page.html')),
           // initialFile: "assets/index.html",
@@ -121,22 +125,25 @@ class _CustomerWebViewState extends State<CustomerWebView> {
             print(consoleMessage);
           },
         ),
-        GestureDetector(
-          onTap: () => Navigator.pop(context),
-          child: Container(
-            margin: const EdgeInsets.only(left: 16, top: 16),
-            width: 44,
-            height: 44,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(22),
-              color: Colors.grey.withOpacity(0.3),
-            ),
-            child: const Icon(
-              Icons.navigate_before,
-              color: Colors.white,
+        Visibility(
+          visible: widget.hideBack != true,
+          child: GestureDetector(
+            onTap: () => Navigator.pop(context),
+            child: Container(
+              margin: const EdgeInsets.only(left: 16, top: 16),
+              width: 44,
+              height: 44,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(22),
+                color: Colors.grey.withOpacity(0.3),
+              ),
+              child: const Icon(
+                Icons.navigate_before,
+                color: Colors.white,
+              ),
             ),
           ),
-        ),
+        )
       ],
     ));
   }
