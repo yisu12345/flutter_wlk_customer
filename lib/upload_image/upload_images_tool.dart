@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_wlk_customer/upload_image/ossUtil.dart';
 import 'package:flutter_wlk_customer/utils/toast_utils.dart';
 import 'package:get/get.dart';
@@ -100,6 +101,7 @@ class UploadImagesTool {
     //
     showCupertinoModalPopup(
         context: context,
+        barrierColor: Colors.white,
         builder: (BuildContext ctx) {
           return isVideo == true
               ? CupertinoActionSheet(
