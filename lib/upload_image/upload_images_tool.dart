@@ -101,7 +101,6 @@ class UploadImagesTool {
     //
     showCupertinoModalPopup(
         context: context,
-        barrierColor: Colors.white,
         builder: (BuildContext ctx) {
           return isVideo == true
               ? CupertinoActionSheet(
@@ -134,87 +133,90 @@ class UploadImagesTool {
                     },
                   ),
                 )
-              : CupertinoActionSheet(
-                  title: const Text('上传图片'),
-                  message: Text('请选择上传方式\n相册最多${max ?? 9}张'),
-                  actions: isAddOtherWidget != null
-                      ? <Widget>[
-                          isAddOtherWidget,
-                          CupertinoActionSheetAction(
-                            child: const Text('拍照上传'),
-                            onPressed: () {
-                              openCamera(
-                                oSSAccessKeyId: oSSAccessKeyId ?? '',
-                                ossHost: ossHost ?? '',
-                                ossDirectory: ossDirectory ?? '',
-                                policy: policy ?? '',
-                                callback: callback ?? '',
-                                signature: signature ?? '',
-                                chooseImages: (list) =>
-                                    chooseImages?.call(list),
-                              );
-                              Get.back();
-                            },
-                          ),
-                          CupertinoActionSheetAction(
-                            child: const Text('相册'),
-                            onPressed: () {
-                              openGallery(
-                                max: max,
-                                oSSAccessKeyId: oSSAccessKeyId ?? '',
-                                ossHost: ossHost ?? '',
-                                ossDirectory: ossDirectory ?? '',
-                                policy: policy ?? '',
-                                callback: callback ?? '',
-                                signature: signature ?? '',
-                                chooseImages: (list) =>
-                                    chooseImages?.call(list),
-                              );
-                              Get.back();
-                            },
-                          ),
-                        ]
-                      : <Widget>[
-                          CupertinoActionSheetAction(
-                            child: const Text('拍照上传'),
-                            onPressed: () {
-                              openCamera(
-                                oSSAccessKeyId: oSSAccessKeyId ?? '',
-                                ossHost: ossHost ?? '',
-                                ossDirectory: ossDirectory ?? '',
-                                policy: policy ?? '',
-                                callback: callback ?? '',
-                                signature: signature ?? '',
-                                chooseImages: (list) =>
-                                    chooseImages?.call(list),
-                              );
-                              Get.back();
-                            },
-                          ),
-                          CupertinoActionSheetAction(
-                            child: const Text('相册'),
-                            onPressed: () {
-                              openGallery(
-                                max: max,
-                                oSSAccessKeyId: oSSAccessKeyId ?? '',
-                                ossHost: ossHost ?? '',
-                                ossDirectory: ossDirectory ?? '',
-                                policy: policy ?? '',
-                                callback: callback ?? '',
-                                signature: signature ?? '',
-                                chooseImages: (list) =>
-                                    chooseImages?.call(list),
-                              );
-                              Get.back();
-                            },
-                          ),
-                        ],
-                  cancelButton: CupertinoActionSheetAction(
-                    isDefaultAction: true,
-                    child: const Text('取消'),
-                    onPressed: () {
-                      Get.back();
-                    },
+              : Container(
+                  color: Colors.white,
+                  child: CupertinoActionSheet(
+                    title: const Text('上传图片'),
+                    message: Text('请选择上传方式\n相册最多${max ?? 9}张'),
+                    actions: isAddOtherWidget != null
+                        ? <Widget>[
+                            isAddOtherWidget,
+                            CupertinoActionSheetAction(
+                              child: const Text('拍照上传'),
+                              onPressed: () {
+                                openCamera(
+                                  oSSAccessKeyId: oSSAccessKeyId ?? '',
+                                  ossHost: ossHost ?? '',
+                                  ossDirectory: ossDirectory ?? '',
+                                  policy: policy ?? '',
+                                  callback: callback ?? '',
+                                  signature: signature ?? '',
+                                  chooseImages: (list) =>
+                                      chooseImages?.call(list),
+                                );
+                                Get.back();
+                              },
+                            ),
+                            CupertinoActionSheetAction(
+                              child: const Text('相册'),
+                              onPressed: () {
+                                openGallery(
+                                  max: max,
+                                  oSSAccessKeyId: oSSAccessKeyId ?? '',
+                                  ossHost: ossHost ?? '',
+                                  ossDirectory: ossDirectory ?? '',
+                                  policy: policy ?? '',
+                                  callback: callback ?? '',
+                                  signature: signature ?? '',
+                                  chooseImages: (list) =>
+                                      chooseImages?.call(list),
+                                );
+                                Get.back();
+                              },
+                            ),
+                          ]
+                        : <Widget>[
+                            CupertinoActionSheetAction(
+                              child: const Text('拍照上传'),
+                              onPressed: () {
+                                openCamera(
+                                  oSSAccessKeyId: oSSAccessKeyId ?? '',
+                                  ossHost: ossHost ?? '',
+                                  ossDirectory: ossDirectory ?? '',
+                                  policy: policy ?? '',
+                                  callback: callback ?? '',
+                                  signature: signature ?? '',
+                                  chooseImages: (list) =>
+                                      chooseImages?.call(list),
+                                );
+                                Get.back();
+                              },
+                            ),
+                            CupertinoActionSheetAction(
+                              child: const Text('相册'),
+                              onPressed: () {
+                                openGallery(
+                                  max: max,
+                                  oSSAccessKeyId: oSSAccessKeyId ?? '',
+                                  ossHost: ossHost ?? '',
+                                  ossDirectory: ossDirectory ?? '',
+                                  policy: policy ?? '',
+                                  callback: callback ?? '',
+                                  signature: signature ?? '',
+                                  chooseImages: (list) =>
+                                      chooseImages?.call(list),
+                                );
+                                Get.back();
+                              },
+                            ),
+                          ],
+                    cancelButton: CupertinoActionSheetAction(
+                      isDefaultAction: true,
+                      child: const Text('取消'),
+                      onPressed: () {
+                        Get.back();
+                      },
+                    ),
                   ),
                 );
         });
