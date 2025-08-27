@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_wlk_customer/upload_image/ossUtil.dart';
 import 'package:flutter_wlk_customer/utils/toast_utils.dart';
 import 'package:get/get.dart';
@@ -133,13 +134,25 @@ class UploadImagesTool {
                   ),
                 )
               : CupertinoActionSheet(
-                  title: const Text('上传图片'),
-                  message: Text('请选择上传方式\n相册最多${max ?? 9}张'),
+                  title: Container(
+                      width: double.infinity,
+                      color: Colors.white,
+                      alignment: Alignment.center,
+                      child: const Text('上传图片')),
+                  message: Container(
+                      width: double.infinity,
+                      color: Colors.white,
+                      alignment: Alignment.center,
+                      child: Text('请选择上传方式\n相册最多${max ?? 9}张')),
                   actions: isAddOtherWidget != null
                       ? <Widget>[
                           isAddOtherWidget,
                           CupertinoActionSheetAction(
-                            isDefaultAction: true,
+                            child: Container(
+                                width: double.infinity,
+                                color: Colors.white,
+                                alignment: Alignment.center,
+                                child: const Text('拍照上传')),
                             onPressed: () {
                               openCamera(
                                 oSSAccessKeyId: oSSAccessKeyId ?? '',
@@ -153,11 +166,13 @@ class UploadImagesTool {
                               );
                               Get.back();
                             },
-                            child: const Text('拍照上传'),
                           ),
                           CupertinoActionSheetAction(
-                            isDefaultAction: true,
-                            child: const Text('相册'),
+                            child: Container(
+                                width: double.infinity,
+                                color: Colors.white,
+                                alignment: Alignment.center,
+                                child: const Text('相册')),
                             onPressed: () {
                               openGallery(
                                 max: max,
