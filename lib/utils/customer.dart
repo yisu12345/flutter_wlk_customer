@@ -218,26 +218,26 @@ class CustomerHtmlWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  HtmlWidget(html ?? '');
-    // return Html(
-    //   data: html,
-    //   extensions: [
-    //     TagExtension(
-    //       tagsToExtend: {"flutter"},
-    //       child: const FlutterLogo(),
-    //     ),
-    //   ],
-    //   style: {
-    //     "p.fancy": Style(
-    //       textAlign: TextAlign.center,
-    //       // padding:  EdgeInsets.all(),
-    //       backgroundColor: Colors.grey,
-    //       margin: Margins(left: Margin(50, Unit.px), right: Margin.auto()),
-    //       width: Width(300, Unit.px),
-    //       fontWeight: FontWeight.bold,
-    //     ),
-    //   },
-    // );
+
+    return Html(
+      data: html,
+      extensions: [
+        TagExtension(
+          tagsToExtend: {"flutter"},
+          child: const FlutterLogo(),
+        ),
+      ],
+      style: {
+        "p.fancy": Style(
+          textAlign: TextAlign.center,
+          // padding:  EdgeInsets.all(),
+          backgroundColor: Colors.grey,
+          margin: Margins(left: Margin(50, Unit.px), right: Margin.auto()),
+          width: Width(300, Unit.px),
+          fontWeight: FontWeight.bold,
+        ),
+      },
+    );
     // return Html(
     //   data:  html,
     //   style: const TextStyle(
