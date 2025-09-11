@@ -537,13 +537,13 @@
     },
     {
       "name": "screen_brightness",
-      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/screen_brightness-2.1.6",
+      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/screen_brightness-2.1.7",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
     {
       "name": "screen_brightness_android",
-      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/screen_brightness_android-2.1.2",
+      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/screen_brightness_android-2.1.3",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
@@ -561,7 +561,7 @@
     },
     {
       "name": "screen_brightness_ohos",
-      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/screen_brightness_ohos-2.1.1",
+      "rootUri": "file:///Users/threeone/.pub-cache/hosted/pub.flutter-io.cn/screen_brightness_ohos-2.1.2",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
@@ -830,7 +830,7 @@
       "languageVersion": "3.5"
     }
   ],
-  "generated": "2025-08-28T07:22:24.209665Z",
+  "generated": "2025-09-11T06:42:27.506763Z",
   "generator": "pub",
   "generatorVersion": "3.6.2",
   "flutterRoot": "file:///Users/threeone/flutter",

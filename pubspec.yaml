@@ -32,7 +32,7 @@ dependencies:
 #  webview_flutter: ^4.8.0
   video_player: ^2.6.1 #视频
 #  perfect_volume_control: ^1.0.5 #声音
-  screen_brightness: ^2.0.1 #亮度
+  screen_brightness: ^2.1.7 #亮度
   provider: ^6.0.3
 #  wakelock: ^0.6.2
   wakelock_plus: ^1.2.5
